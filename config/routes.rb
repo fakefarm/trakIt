@@ -1,5 +1,8 @@
 InventoryApp2::Application.routes.draw do
 
+  resources :users
+
+
   root to: 'static_pages#welcome'
   match 'about' => 'static_pages#about'
   
