@@ -1,5 +1,8 @@
 InventoryApp2::Application.routes.draw do
 
+  resources :items
+
+
   resources :serial_numbers
   resources :tags
   resources :bundles

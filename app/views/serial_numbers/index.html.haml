@@ -3,7 +3,6 @@
 %table
   %tr
     %th Number
-    %th Trackable
     %th Warranty end
     %th Item
     %th User
@@ -14,7 +13,6 @@
   - @serial_numbers.each do |serial_number|
     %tr
       %td= serial_number.number
-      %td= serial_number.trackable
       %td= serial_number.warranty_end
       %td= serial_number.item
       %td= serial_number.user

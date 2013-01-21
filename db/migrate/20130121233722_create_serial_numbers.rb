@@ -2,7 +2,6 @@ class CreateSerialNumbers < ActiveRecord::Migration
   def change
     create_table :serial_numbers do |t|
       t.string :number
-      t.boolean :trackable
       t.date :warranty_end
       t.references :item
       t.references :user
