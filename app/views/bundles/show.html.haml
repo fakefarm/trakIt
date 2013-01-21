@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Label:
+  = @bundle.label
+%p
+  %b Input:
+  = @bundle.input
+
+= link_to 'Edit', edit_bundle_path(@bundle)
+\|
+= link_to 'Back', bundles_path
