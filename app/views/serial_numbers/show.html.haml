@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Number:
+  = @serial_number.number
+%p
+  %b Trackable:
+  = @serial_number.trackable
+%p
+  %b Warranty end:
+  = @serial_number.warranty_end
+%p
+  %b Item:
+  = @serial_number.item
+%p
+  %b User:
+  = @serial_number.user
+
+= link_to 'Edit', edit_serial_number_path(@serial_number)
+\|
+= link_to 'Back', serial_numbers_path
