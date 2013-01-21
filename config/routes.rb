@@ -1,11 +1,8 @@
 InventoryApp2::Application.routes.draw do
 
+  resources :tags
   resources :bundles
-
-
   resources :comments
-
-
   resources :users
 
 
