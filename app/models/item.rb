@@ -11,4 +11,9 @@ class Item < ActiveRecord::Base
 
   after_save :add_serial_number
 
+protected
+
+def add_serial_number
+end
+
 end

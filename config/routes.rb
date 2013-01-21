@@ -1,5 +1,8 @@
 InventoryApp2::Application.routes.draw do
 
+  resources :checkouts
+
+
   resources :items
 
 

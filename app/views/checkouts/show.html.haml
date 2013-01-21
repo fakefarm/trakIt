@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @checkout.name
+%p
+  %b Quantity:
+  = @checkout.quantity
+%p
+  %b User:
+  = @checkout.user
+%p
+  %b Item:
+  = @checkout.item
+%p
+  %b Status:
+  = @checkout.status
+
+= link_to 'Edit', edit_checkout_path(@checkout)
+\|
+= link_to 'Back', checkouts_path

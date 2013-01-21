@@ -1,0 +1,25 @@
+= form_for @checkout do |f|
+  - if @checkout.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@checkout.errors.count, "error")} prohibited this checkout from being saved:"
+      %ul
+        - @checkout.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :quantity
+    = f.number_field :quantity
+  .field
+    = f.label :user
+    = f.text_field :user
+  .field
+    = f.label :item
+    = f.text_field :item
+  .field
+    = f.label :status
+    = f.text_field :status
+  .actions
+    = f.submit 'Save'
