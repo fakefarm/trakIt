@@ -1,9 +1,14 @@
 class Checkout < ActiveRecord::Base
+  attr_accessible :name, :quantity, :status
+  
   belongs_to :user
   belongs_to :item
-  attr_accessible :name, :quantity, :status
+  has_many :comments
 
   after_save :reduce_quantity
+
+  validates :quantity, :presence => true
+
 
 protected
 

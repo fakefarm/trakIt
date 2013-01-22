@@ -1,17 +1,17 @@
 %h1 Listing bundles
 
-%table
+%table.table
   %tr
-    %th Label
-    %th Input
+    %th Name
+    
     %th
     %th
     %th
 
   - @bundles.each do |bundle|
     %tr
-      %td= bundle.label
-      %td= bundle.input
+      %td= bundle.name
+    
       %td= link_to 'Show', bundle
       %td= link_to 'Edit', edit_bundle_path(bundle)
       %td= link_to 'Destroy', bundle, method: :delete, data: { confirm: 'Are you sure?' }
