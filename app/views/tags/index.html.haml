@@ -4,7 +4,6 @@
   %tr
     %th Label
     %th Input
-    %th Item
     %th
     %th
     %th
@@ -13,7 +12,6 @@
     %tr
       %td= tag.label
       %td= tag.input
-      %td= tag.item
       %td= link_to 'Show', tag
       %td= link_to 'Edit', edit_tag_path(tag)
       %td= link_to 'Destroy', tag, method: :delete, data: { confirm: 'Are you sure?' }

@@ -14,9 +14,9 @@
     = f.date_select :warranty_end
   .field
     = f.label :item
-    = f.text_field :item
+    = f.collection_select :item_id, Item.all, :id, :name
   .field
     = f.label :user
-    = f.text_field :user
+    = f.collection_select :user_id, User.all, :id, :name
   .actions
     = f.submit 'Save'

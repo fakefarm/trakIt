@@ -2,26 +2,25 @@
 
 %table.table
   %tr
-    %th Name
-    %th Quantity
+    %th Date Out
     %th User
     %th Item
-    %th Status
-    %th
-    %th
-    %th
+    %th Quantity
+    %th Checkout Status
+    %th Serial Number
+    
 
   - @checkouts.each do |checkout|
     %tr
-      %td= checkout.name
+      %td= link_to checkout.created_at.strftime("%b %e"), checkout
+      %td= checkout.user.name
+      %td= checkout.item.name
       %td= checkout.quantity
-      %td= checkout.user
-      %td= checkout.item
       %td= checkout.status
-      %td= link_to 'Show', checkout
+      %td= checkout.checkout_serial
       %td= link_to 'Edit', edit_checkout_path(checkout)
       %td= link_to 'Destroy', checkout, method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
 
-= link_to 'New Checkout', new_checkout_path
+= link_to 'New Checkout', new_checkout_path, class: "btn btn-success"

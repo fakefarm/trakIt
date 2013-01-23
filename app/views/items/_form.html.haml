@@ -17,6 +17,6 @@
     = f.number_field :quantity
   .field
     = f.label :bundle
-    = f.text_field :bundle
+    = f.collection_select :bundle_id, Bundle.all, :id, :name
   .actions
     = f.submit 'Save'

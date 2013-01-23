@@ -1,18 +1,41 @@
 %p#notice= notice
 
+%h1= @item.name 
+<hr>
 %p
-  %b Name:
-  = @item.name
-%p
-  %b Quantity:
-  = @item.quantity
-%p
-  %b Trackable:
-  = @item.trackable
-%p
-  %b Bundle:
-  = @item.bundle
+  = link_to 'Edit', edit_item_path(@item)
+  \|
+  = link_to 'Back', items_path
 
-= link_to 'Edit', edit_item_path(@item)
-\|
-= link_to 'Back', items_path
+
+%table.table
+  %tr
+    %th Available Quantity
+    %th Checked out
+    %th Bundle
+  %tr
+    %td= @item.quantity
+    %td= @serials.count
+    %td= link_to @item.bundle.name, bundle_path(@item.bundle)
+
+
+
+
+%hr
+
+%h3 Serial Numbers
+%table.table
+  %tr
+    %th Number
+    %th Date Created
+    %th Warranty End
+    %th Assigned to
+
+  - @serials.each do |item|
+    %tr
+      %td= link_to item.number, edit_serial_number_path(item)
+      %td= item.created_at.strftime('%B %e')
+      %td= item.warranty_end
+      %td= item.user.name unless item.user.nil?
+
+

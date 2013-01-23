@@ -1,23 +1,20 @@
-%h1 Listing serial_numbers
+%h1 Listing Serial Numbers
 
-%table
+%table.table
   %tr
     %th Number
     %th Warranty end
     %th Item
     %th User
     %th
-    %th
-    %th
+
 
   - @serial_numbers.each do |serial_number|
     %tr
-      %td= serial_number.number
+      %td= link_to serial_number.number, edit_serial_number_path(serial_number)
       %td= serial_number.warranty_end
-      %td= serial_number.item
-      %td= serial_number.user
-      %td= link_to 'Show', serial_number
-      %td= link_to 'Edit', edit_serial_number_path(serial_number)
+      %td= serial_number.item.name
+      %td= serial_number.user.name unless serial_number.user.nil?
       %td= link_to 'Destroy', serial_number, method: :delete, data: { confirm: 'Are you sure?' }
 
 %br

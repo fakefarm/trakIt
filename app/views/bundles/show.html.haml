@@ -1,10 +1,22 @@
 %p#notice= notice
 
-%p
-  %b Label:
-  = @bundle.name
-%p
+%h1= @bundle.name
 
 = link_to 'Edit', edit_bundle_path(@bundle)
 \|
 = link_to 'Back', bundles_path
+
+<hr>
+
+%h3 Items
+%table.table.table
+  %tr
+    %th Item
+    %th Quantity
+    
+  - @bundle.items.each do |asset|
+    %tr
+      %td= link_to asset.name, asset
+      %td= asset.quantity
+        
+<hr>

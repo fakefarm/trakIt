@@ -3,18 +3,16 @@
 %p
   %b Number:
   = @serial_number.number
-%p
-  %b Trackable:
-  = @serial_number.trackable
+
 %p
   %b Warranty end:
   = @serial_number.warranty_end
 %p
   %b Item:
-  = @serial_number.item
+  = @serial_number.item.name unless @serial_number.item.name.nil?
 %p
   %b User:
-  = @serial_number.user
+  = @serial_number.user.name unless  @serial_number.user.nil?
 
 = link_to 'Edit', edit_serial_number_path(@serial_number)
 \|

@@ -6,11 +6,12 @@
     %th
     %th
 
-  - @users.each do |user|
-    %tr
-      %td= link_to user.name, user
-      %td= link_to 'Edit', edit_user_path(user)
-      %td= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }
+  - @users.each do |user| 
+    - unless user.name == "(none)"
+      %tr
+        %td= link_to user.name, user
+        %td= link_to 'Edit', edit_user_path(user)
+        %td= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
 

@@ -13,13 +13,15 @@
     = f.label :quantity
     = f.number_field :quantity
   .field
-    = f.label :user
-    = f.text_field :user
-  .field
     = f.label :item
-    = f.text_field :item
+    = f.collection_select :item_id, Item.all, :id, :name
   .field
     = f.label :status
-    = f.text_field :status
+    = f.text_field :status  
+  .field
+    = f.label :serial_number
+    = f.text_field :checkout_serial
+
+
   .actions
     = f.submit 'Save'

@@ -10,12 +10,10 @@
 
   - @bundles.each do |bundle|
     %tr
-      %td= bundle.name
-    
-      %td= link_to 'Show', bundle
+      %td= link_to bundle.name, bundle
       %td= link_to 'Edit', edit_bundle_path(bundle)
       %td= link_to 'Destroy', bundle, method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
 
-= link_to 'New Bundle', new_bundle_path
+= link_to 'New Bundle', new_bundle_path, class: "btn btn-success"

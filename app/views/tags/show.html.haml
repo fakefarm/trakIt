@@ -6,10 +6,8 @@
 %p
   %b Input:
   = @tag.input
-%p
-  %b Item:
-  = @tag.item
+
 
 = link_to 'Edit', edit_tag_path(@tag)
 \|
-= link_to 'Back', tags_path
+= link_to 'Back', bundle_path(@tag.bundle_id)

@@ -1,21 +1,29 @@
 %p#notice= notice
 
-%p
-  %b Name:
-  = @checkout.name
-%p
-  %b Quantity:
-  = @checkout.quantity
-%p
-  %b User:
-  = @checkout.user
-%p
-  %b Item:
-  = @checkout.item
-%p
-  %b Status:
-  = @checkout.status
+%h1 Checkout Summary
+
+%h2=link_to "Confirm serial number assigned to user", @checkout.item
+
+%table.table
+  %tr
+    %th Date
+    %th User
+    %th Item
+    %th Quantity
+    %th Serial Number
+    %th Status
+    %th Comments
+
+
+  %tr
+    %td=  @checkout.user.created_at.strftime('%B %e')
+    %td=  @checkout.user.name
+    %td=  @checkout.item.name
+    %td=  @checkout.quantity
+    %td=  @checkout.checkout_serial
+    %td=  @checkout.status
 
 = link_to 'Edit', edit_checkout_path(@checkout)
 \|
 = link_to 'Back', checkouts_path
+

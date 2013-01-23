@@ -1,9 +1,24 @@
 %p#notice= notice
 
-%p
-  %b Name:
-  = @user.name
+%h1= @user.name
 
 = link_to 'Edit', edit_user_path(@user)
 \|
 = link_to 'Back', users_path
+
+<hr>
+%h2= "#{pluralize(@user.items.count, "item")}  checked out"
+
+
+%table.table
+  %tr
+    %th Name
+    %th Date Out
+    %th Status
+  - @checkout.each do |thing|
+    %tr
+      %td= link_to thing.item.name, item_path(thing.item_id)
+      %td= thing.item.created_at.strftime("%B %e")
+      %td= thing.status
+  
+
