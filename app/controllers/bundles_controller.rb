@@ -41,6 +41,7 @@ class BundlesController < ApplicationController
   # POST /bundles.json
   def create
     @bundle = Bundle.new(params[:bundle])
+    
 
     respond_to do |format|
       if @bundle.save

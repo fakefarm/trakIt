@@ -1,20 +1,21 @@
 InventoryApp2::Application.routes.draw do
 
+  root to: 'static_pages#welcome'
+
+  match 'checkouts/assign-serial-number' => 'checkouts#assign_serial_number'
+  match 'about' => 'static_pages#about'
+
   resources :checkouts
-
-
   resources :items
-
-
   resources :serial_numbers
   resources :tags
   resources :bundles
   resources :comments
   resources :users
 
+  
 
-  root to: 'static_pages#welcome'
-  match 'about' => 'static_pages#about'
+
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

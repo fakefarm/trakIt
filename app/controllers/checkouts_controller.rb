@@ -1,6 +1,4 @@
 class CheckoutsController < ApplicationController
-  # GET /checkouts
-  # GET /checkouts.json
   def index
     @checkouts = Checkout.all
 
@@ -10,8 +8,6 @@ class CheckoutsController < ApplicationController
     end
   end
 
-  # GET /checkouts/1
-  # GET /checkouts/1.json
   def show
     @checkout = Checkout.find(params[:id])
 
@@ -21,8 +17,6 @@ class CheckoutsController < ApplicationController
     end
   end
 
-  # GET /checkouts/new
-  # GET /checkouts/new.json
   def new
     @checkout = Checkout.new
 
@@ -32,13 +26,10 @@ class CheckoutsController < ApplicationController
     end
   end
 
-  # GET /checkouts/1/edit
   def edit
-    @checkout = Checkout.find(params[:id])
+    @checkout = Checkout.find(:last)
   end
 
-  # POST /checkouts
-  # POST /checkouts.json
   def create
     @checkout = Checkout.new(params[:checkout])
 
@@ -53,8 +44,10 @@ class CheckoutsController < ApplicationController
     end
   end
 
-  # PUT /checkouts/1
-  # PUT /checkouts/1.json
+  def assign_serial_number
+     @checkout = Checkout.find(:last)
+  end
+
   def update
     @checkout = Checkout.find(params[:id])
 
@@ -69,8 +62,6 @@ class CheckoutsController < ApplicationController
     end
   end
 
-  # DELETE /checkouts/1
-  # DELETE /checkouts/1.json
   def destroy
     @checkout = Checkout.find(params[:id])
     @checkout.destroy

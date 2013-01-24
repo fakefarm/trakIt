@@ -1,9 +1,11 @@
 class Checkout < ActiveRecord::Base
-  attr_accessible :name, :quantity, :status
+  attr_accessible :name, :quantity, :status, :user_id, :item_id, 
+                  :checkout_serial
   
   belongs_to :user
   belongs_to :item
   has_many :comments
+  has_one :serial_number
 
   after_save :reduce_quantity
 
@@ -13,5 +15,9 @@ class Checkout < ActiveRecord::Base
 protected
 
   def reduce_quantity
+    updated_quantity = self.item.quantity - self.quantity
+
+    self.item.update_attributes( quantity: updated_quantity )
+
   end
 end

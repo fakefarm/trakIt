@@ -57,10 +57,11 @@ class SerialNumbersController < ApplicationController
   # PUT /serial_numbers/1.json
   def update
     @serial_number = SerialNumber.find(params[:id])
+    @item = @serial_number.item_id
 
     respond_to do |format|
       if @serial_number.update_attributes(params[:serial_number])
-        format.html { redirect_to @serial_number, notice: 'Serial number was successfully updated.' }
+        format.html { redirect_to item_path(@item), notice: 'Serial number was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
