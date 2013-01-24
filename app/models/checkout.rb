@@ -5,7 +5,7 @@ class Checkout < ActiveRecord::Base
   belongs_to :user
   belongs_to :item
   has_many :comments
-  has_one :serial_number
+  has_many :serial_numbers
 
   after_save :reduce_quantity
 

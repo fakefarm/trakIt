@@ -1,1 +1,34 @@
 %h1 Step 2, pick your serial number
+
+%table.table
+  %tr
+    %th Number
+
+  -@checkout.item.serial_numbers.each do |n|
+    %tr
+      %td= link_to n.number, edit_serial_number_path(n)
+
+/ %p=@serial_number
+
+/ = form_for @serial_number do |f|
+/   - if @serial_number.errors.any?
+/     #error_explanation
+/       %h2= "#{pluralize(@serial_number.errors.count, "error")} prohibited this serial_number from being saved:"
+/       %ul
+/         - @serial_number.errors.full_messages.each do |msg|
+/           %li= msg
+
+/   .field
+/     = f.label :number
+/     = f.text_field :number
+/   .field
+/     = f.label :warranty_end
+/     = f.date_select :warranty_end
+/   .field
+/     = f.label :item
+/     = f.collection_select :item_id, Item.all, :id, :name
+/   .field
+/     = f.label :user
+/     = f.collection_select :user_id, User.all, :id, :name
+/   .actions
+/     = f.submit 'Save'

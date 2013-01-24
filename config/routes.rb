@@ -2,7 +2,8 @@ InventoryApp2::Application.routes.draw do
 
   root to: 'static_pages#welcome'
 
-  match 'checkouts/assign-serial-number' => 'checkouts#assign_serial_number'
+  match 'checkouts/assign-serial-number' => 'checkouts#assign_serial_number',     as: 'serial_assignment'
+  
   match 'about' => 'static_pages#about'
 
   resources :checkouts

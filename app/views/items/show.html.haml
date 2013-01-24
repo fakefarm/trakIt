@@ -10,32 +10,37 @@
 
 %table.table
   %tr
-    %th Available Quantity
-    %th Checked out
+    %th Total Available
+    %th
+      - if @item.trackable?
+        Total.inventory
     %th Bundle
-  %tr
-    %td= @item.quantity
-    %td= @serials.count
+  %tr 
+    / TODO - Move into helper
+    %td= @serials.count - @serials.where(user_id: 1).count
+
+    / TODO - Move into helper
+    %td= @serials.count if @item.trackable?
     %td= link_to @item.bundle.name, bundle_path(@item.bundle)
 
 
 
 
 %hr
+- if @item.trackable?
 
-%h3 Serial Numbers
-%table.table
-  %tr
-    %th Number
-    %th Date Created
-    %th Warranty End
-    %th Assigned to
-
-  - @serials.each do |item|
+  %h3 Serial Numbers
+  %table.table
     %tr
-      %td= link_to item.number, edit_serial_number_path(item)
-      %td= item.created_at.strftime('%B %e')
-      %td= item.warranty_end
-      %td= link_to item.user.name, user_path(item.user) unless item.user.nil?
+      %th Number
+      %th Date Created
+      %th Warranty End
+      %th Assigned to
 
-
+    - @serials.each do |item|
+      %tr
+        %td= link_to item.number, edit_serial_number_path(item)
+        %td= item.created_at.strftime('%B %e')
+        %td= item.warranty_end
+        %td= link_to item.user.name, user_path(item.user) unless item.user.nil?
+= link_to 'Add Serial number', new_serial_number_path, class: "btn btn-success"

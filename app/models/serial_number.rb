@@ -6,6 +6,5 @@ class SerialNumber < ActiveRecord::Base
   belongs_to :checkout
 
   validates :number, :presence => true
-                     
 
 end

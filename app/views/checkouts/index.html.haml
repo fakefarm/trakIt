@@ -6,8 +6,7 @@
     %th User
     %th Item
     %th Quantity
-    %th Checkout Status
-    %th Serial Number
+    %th Status
     
 
   - @checkouts.each do |checkout|
@@ -17,7 +16,6 @@
       %td= checkout.item.name
       %td= checkout.quantity
       %td= checkout.status
-      %td= checkout.checkout_serial
       %td= link_to 'Edit', edit_checkout_path(checkout)
       %td= link_to 'Destroy', checkout, method: :delete, data: { confirm: 'Are you sure?' }
 

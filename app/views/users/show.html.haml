@@ -22,13 +22,3 @@
       %td= thing.item.created_at.strftime("%B %e")
       %td= thing.status
       %td= thing.checkout_serial
-
-%table.table.span3
-  %tr
-    %th Serial Number
-  - @serials.each do |product|
-    %tr
-      %td=link_to product.number, product
-  
-  
-
