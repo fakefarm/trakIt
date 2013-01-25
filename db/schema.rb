@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130123214125) do
+ActiveRecord::Schema.define(:version => 20130125164852) do
 
   create_table "bundles", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -36,11 +36,14 @@ ActiveRecord::Schema.define(:version => 20130123214125) do
   create_table "comments", :force => true do |t|
     t.text     "notes"
     t.integer  "checkout_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
   end
 
   add_index "comments", ["checkout_id"], :name => "index_comments_on_checkout_id"
+  add_index "comments", ["commentable_id", "commentable_type"], :name => "index_comments_on_commentable_id_and_commentable_type"
 
   create_table "items", :force => true do |t|
     t.string   "name"
@@ -64,15 +67,6 @@ ActiveRecord::Schema.define(:version => 20130123214125) do
 
   add_index "serial_numbers", ["item_id"], :name => "index_serial_numbers_on_item_id"
   add_index "serial_numbers", ["user_id"], :name => "index_serial_numbers_on_user_id"
-
-  create_table "tags", :force => true do |t|
-    t.string   "label"
-    t.string   "input"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-    t.integer  "tagable_id"
-    t.string   "tagable_type"
-  end
 
   create_table "users", :force => true do |t|
     t.string   "name"

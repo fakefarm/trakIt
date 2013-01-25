@@ -5,7 +5,7 @@ class Item < ActiveRecord::Base
   attr_accessible :name, :quantity, :trackable, :bundle_id
 
   belongs_to :bundle
-  has_many :tags, as: :tagable, dependent: :destroy
+  has_many :comments, as: :commentable
   has_many :checkouts, dependent: :destroy
   has_many :users, through: :checkouts
   has_many :serial_numbers, dependent: :destroy

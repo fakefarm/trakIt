@@ -9,7 +9,6 @@ InventoryApp2::Application.routes.draw do
   resources :checkouts
   resources :items
   resources :serial_numbers
-  resources :tags
   resources :bundles
   resources :comments
   resources :users
