@@ -1,4 +1,7 @@
 class Item < ActiveRecord::Base
+
+  #TODO - change to ASSET
+  
   attr_accessible :name, :quantity, :trackable, :bundle_id
 
   belongs_to :bundle

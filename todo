@@ -1,3 +1,36 @@
- ☐ Serial Numbers
- ☐ Tags
- ☐ Comments
+Checkout:
+ ☐ make checkout show - 'assignment history'
+ ☐ add tags to assignment show
+ ☐ convert checkouts to assignments
+
+
+Items:
+ ☐ at asset level, have counts based on status
+ ☐ Add waranty end to item / asset level, not serial number
+ ☐ asset / item should have - make, model, warranty, title
+
+
+
+New Item workflow idea:
+ ☐ New Item has bundle auto complete, and assets in bundle
+ ☐ select existing asset via autofill, or make a new one if none exists there.
+
+
+Where to put comments:
+ ☐ remove tags and use those as comments, just different fields;  tag, comment, status
+ ☐ checkout#show
+
+ ☐ item#show
+ ☐ SerialNumber#show
+
+Serial Numbers:
+ ☐ make serial numbers have status
+ ☐ make serial_level show - the 'asset history'
+ ☐ add tags to serial show
+
+Next Steps:
+ ☐ review zen desk api
+ ☐ review autocomplete
+
+Bundle:
+☐ move trackable to bundle level

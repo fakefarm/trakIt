@@ -10,11 +10,11 @@
     = f.label :name
     = f.collection_select :user_id, User.all, :id, :name
   .field
+    = f.label :item_name
+    = f.collection_select :item_id, Item.all, :id, :name
+  .field
     = f.label :quantity
     = f.number_field :quantity
-  .field
-    = f.label :item
-    = f.collection_select :item_id, Item.all, :id, :name
   .field
     = f.label :status
     = f.text_field :status  

@@ -10,7 +10,8 @@ class CheckoutsController < ApplicationController
 
   def show
     @checkout = Checkout.find(params[:id])
-
+    @comment = Comment.new
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @checkout }

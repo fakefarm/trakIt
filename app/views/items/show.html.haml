@@ -13,11 +13,10 @@
     %th Total Available
     %th
       - if @item.trackable?
-        Total.inventory
+        Total Inventory
     %th Bundle
   %tr 
-    / TODO - Move into helper
-    %td= @serials.count - @serials.where(user_id: 1).count
+    %td= total_items_available
 
     / TODO - Move into helper
     %td= @serials.count if @item.trackable?

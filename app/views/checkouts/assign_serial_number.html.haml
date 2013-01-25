@@ -3,10 +3,12 @@
 %table.table
   %tr
     %th Number
+    %th Current User
 
   -@checkout.item.serial_numbers.each do |n|
     %tr
       %td= link_to n.number, edit_serial_number_path(n)
+      %td= n.user.name
 
 / %p=@serial_number
 

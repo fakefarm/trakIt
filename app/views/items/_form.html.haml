@@ -8,7 +8,10 @@
           %li= msg
   .control-group
     .field
-      = f.label :name
+      = f.label :bundle
+      = f.collection_select :bundle_id, Bundle.all, :id, :name
+    .field
+      = f.label :Item_name
       = f.text_field :name
     .field
       = f.label :trackable
@@ -16,8 +19,5 @@
     .field
       = f.label :quantity
       = f.number_field :quantity
-    .field
-      = f.label :bundle
-      = f.collection_select :bundle_id, Bundle.all, :id, :name
     .actions.form-actions
       = f.submit 'Save', class: "btn btn-success"
