@@ -6,6 +6,7 @@ gem 'bootstrap-sass', '2.1'
 gem 'RedCloth'
 gem 'pry'
 gem 'annotate', ">=2.5.0"
+gem 'simple_form'
 
 group :development, :test do 
   gem 'haml-rails'

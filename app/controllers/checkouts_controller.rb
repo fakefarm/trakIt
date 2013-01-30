@@ -10,7 +10,7 @@ class CheckoutsController < ApplicationController
 
   def show
     @checkout = Checkout.find(params[:id])
-    @comment = Comment.new
+    @assignment = AssignmentHistory.new
     
     respond_to do |format|
       format.html # show.html.erb
@@ -20,6 +20,7 @@ class CheckoutsController < ApplicationController
 
   def new
     @checkout = Checkout.new
+    @comment = Comment.new
 
     respond_to do |format|
       format.html # new.html.erb

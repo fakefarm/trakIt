@@ -12,7 +12,6 @@
     %th Status
     %th Comments
 
-
   %tr
     %td=  @checkout.user.created_at.strftime('%B %e')
     %td=  @checkout.user.name
@@ -25,17 +24,17 @@
 \|
 = link_to 'Back', checkouts_path
 
+= simple_form_for(@assignment) do |f|
+  = f.error_notification
 
-= form_for @comment do |f|
-  - if @comment.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@comment.errors.count, "error")} prohibited this comment from being saved:"
-      %ul
-        - @comment.errors.full_messages.each do |msg|
-          %li= msg
+  = f.input :checkout_id, as: :hidden, input_html: { value: @checkout.id }
+  = f.input :note, as: :text, input_html: { rows: 3 }
 
-  .field
-    = f.label :notes
-    = f.text_area :notes
-  .actions
-    = f.submit 'Save'
+  .form-actions
+    = f.button :submit
+
+- @checkout.assignment_histories.each do |historical|
+  %p
+  = historical.note 
+  \- 
+  = historical.created_at.strftime("%B %e")

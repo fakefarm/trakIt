@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Comments:
+  = @asset_history.comments
+%p
+  %b Serial number:
+  = @asset_history.serial_number_id
+
+= link_to 'Edit', edit_asset_history_path(@asset_history)
+\|
+= link_to 'Back', asset_histories_path

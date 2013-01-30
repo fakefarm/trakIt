@@ -1,0 +1,21 @@
+%h1 Listing asset_histories
+
+%table
+  %tr
+    %th Comments
+    %th Serial number
+    %th
+    %th
+    %th
+
+  - @asset_histories.each do |asset_history|
+    %tr
+      %td= asset_history.comments
+      %td= asset_history.serial_number_id
+      %td= link_to 'Show', asset_history
+      %td= link_to 'Edit', edit_asset_history_path(asset_history)
+      %td= link_to 'Destroy', asset_history, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Asset history', new_asset_history_path

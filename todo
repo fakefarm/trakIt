@@ -1,3 +1,10 @@
+
+Misc:
+ ☐ Add simple_form
+ ☐ bring back polymorphic tags
+ ☐ figure out hstore?
+ ☐ incorporate comments as polymorphic
+
 Checkout:
  ☐ make checkout show - 'assignment history'
  ☐ add tags to assignment show
@@ -17,11 +24,11 @@ New Item workflow idea:
 
 
 Where to put comments:
- ☐ remove tags and use those as comments, just different fields;  tag, comment, status
  ☐ checkout#show
-
  ☐ item#show
  ☐ SerialNumber#show
+ ☐ user#show
+
 
 Serial Numbers:
  ☐ make serial numbers have status
@@ -34,3 +41,8 @@ Next Steps:
 
 Bundle:
 ☐ move trackable to bundle level
+
+
+＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
+Archive:
+ ✔ remove tags and use those as comments, just different fields;  tag, comment, status @done (13-01-28 10:55)

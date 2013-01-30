@@ -4,7 +4,8 @@ class SerialNumber < ActiveRecord::Base
   belongs_to :item
   belongs_to :user
   belongs_to :checkout
-
+  has_many :asset_histories
+  
   validates :number, :presence => true
 
 end

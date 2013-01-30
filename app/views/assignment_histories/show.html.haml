@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Checkout:
+  = @assignment_history.checkout_id
+%p
+  %b Note:
+  = @assignment_history.note
+
+= link_to 'Edit', edit_assignment_history_path(@assignment_history)
+\|
+= link_to 'Back', assignment_histories_path

@@ -1,21 +1,8 @@
 %h1 Listing comments
 
-%table.table
-  %tr
-    %th Notes
-    %th Checkout
-    %th
-    %th
-    %th
-
+.comments
   - @comments.each do |comment|
-    %tr
-      %td= comment.notes
-      %td= comment.checkout
-      %td= link_to 'Show', comment
-      %td= link_to 'Edit', edit_comment_path(comment)
-      %td= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' }
+    .comment
+      = comment.notes
 
-%br
-
-= link_to 'New Comment', new_comment_path
+= link_to "new comment", [:new, @commentable, :comment ]

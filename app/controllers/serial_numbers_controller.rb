@@ -9,6 +9,7 @@ class SerialNumbersController < ApplicationController
   end
 
   def show
+    @asset_history = AssetHistory.new
     @serial_number = SerialNumber.find(params[:id])
 
     respond_to do |format|

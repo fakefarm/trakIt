@@ -11,7 +11,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130125164852) do
+ActiveRecord::Schema.define(:version => 20130130203621) do
+
+  create_table "asset_histories", :force => true do |t|
+    t.string   "comments"
+    t.integer  "serial_number_id"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  add_index "asset_histories", ["serial_number_id"], :name => "index_asset_histories_on_serial_number_id"
+
+  create_table "assignment_histories", :force => true do |t|
+    t.integer  "checkout_id"
+    t.string   "note"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "assignment_histories", ["checkout_id"], :name => "index_assignment_histories_on_checkout_id"
 
   create_table "bundles", :force => true do |t|
     t.datetime "created_at", :null => false

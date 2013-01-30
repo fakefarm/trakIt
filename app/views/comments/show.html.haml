@@ -2,10 +2,7 @@
 
 %p
   %b Notes:
-  = @comment.notes
-%p
-  %b Checkout:
-  = @comment.checkout
+  = @comment.notes.all
 
 = link_to 'Edit', edit_comment_path(@comment)
 \|

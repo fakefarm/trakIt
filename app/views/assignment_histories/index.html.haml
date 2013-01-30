@@ -1,0 +1,21 @@
+%h1 Listing assignment_histories
+
+%table
+  %tr
+    %th Checkout
+    %th Note
+    %th
+    %th
+    %th
+
+  - @assignment_histories.each do |assignment_history|
+    %tr
+      %td= assignment_history.checkout_id
+      %td= assignment_history.note
+      %td= link_to 'Show', assignment_history
+      %td= link_to 'Edit', edit_assignment_history_path(assignment_history)
+      %td= link_to 'Destroy', assignment_history, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Assignment history', new_assignment_history_path
