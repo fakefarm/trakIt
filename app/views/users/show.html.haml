@@ -6,11 +6,23 @@
 \|
 = link_to 'Back', users_path
 
+= simple_form_for(@comments) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :user_id, as: :hidden, input_html: { value: @user.id}
+    = f.input :comment, as: :text, input_html: { rows: 3 }
+
+
+  .form-actions
+    = f.button :submit
+
+
 <hr>
 %h2= "#{pluralize(@user.items.count, "item")}  checked out"
 
 
-%table.table.span6
+%table.table
   %tr
     %th Name
     %th Date Out
@@ -21,4 +33,16 @@
       %td= link_to thing.item.name, item_path(thing.item_id)
       %td= thing.item.created_at.strftime("%B %e")
       %td= thing.status
-      %td= thing.checkout_serial
+      %td Query where item user_id == user_id
+
+%h2 User History
+%table.table
+  %tr
+    %th Comment
+    %th 
+  - @user.user_comments.each do |entry|
+    %tr
+      %td.span8= entry.comment
+      %td.span4= entry.created_at.strftime("%B %e")
+
+

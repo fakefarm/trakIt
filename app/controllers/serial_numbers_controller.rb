@@ -36,7 +36,7 @@ class SerialNumbersController < ApplicationController
     @default_to_none = User.find(2)
     respond_to do |format|
       if @serial_number.save
-        format.html { redirect_to @serial_number, notice: 'Serial number was successfully created.' }
+        format.html { redirect_to item_path(@serial_number.item_id), notice: 'Serial number was successfully created.' }
         format.json { render json: @serial_number, status: :created, location: @serial_number }
       else
         format.html { render action: "new" }

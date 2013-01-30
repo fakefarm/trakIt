@@ -9,6 +9,7 @@ class Item < ActiveRecord::Base
   has_many :checkouts, dependent: :destroy
   has_many :users, through: :checkouts
   has_many :serial_numbers, dependent: :destroy
+  has_many :item_features
 
   validates :quantity, :presence => true
 

@@ -12,6 +12,8 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @serials = SerialNumber.where(item_id: @item)
     @checkouts = Checkout.where(item_id: @item)
+    @feature = ItemFeature.new
+    @new_serial = SerialNumber.new
  
     respond_to do |format|
       format.html 

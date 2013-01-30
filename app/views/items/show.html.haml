@@ -1,28 +1,34 @@
 %p#notice= notice
 
-%h1= @item.name 
-<hr>
-%p
-  = link_to 'Edit', edit_item_path(@item)
-  \|
-  = link_to 'Back', items_path
+%h1= link_to @item.name, edit_item_path(@item)
+
+.row
+  %p
+  %b Total Stock: 
+  = @serials.count if @item.trackable?
+  %p
+  %b Bundle:
+  = link_to @item.bundle.name, bundle_path(@item.bundle)
 
 
-%table.table
-  %tr
-    %th Total Available
-    %th
-      - if @item.trackable?
-        Total Inventory
-    %th Bundle
-  %tr 
-    %td= total_items_available
+  - @item.item_features.each do |feature|
+    %p
+      %b=feature.feature_key
+      \:
+      =link_to feature.feature_value, edit_item_feature_path(feature)
 
-    / TODO - Move into helper
-    %td= @serials.count if @item.trackable?
-    %td= link_to @item.bundle.name, bundle_path(@item.bundle)
+  = simple_form_for(@feature) do |f|
+    = f.error_notification
 
+    .form-inputs
+      = f.input :feature_key, label: "Label"
+      = f.input :feature_value, label: "Value"
+      = f.input :item_id, as: :hidden, input_html: { value: @item.id }
 
+    .form-actions
+      = f.button :submit, "Add Asset Attribute", class: "btn btn-success"
+
+  
 
 
 %hr
@@ -42,4 +48,19 @@
         %td= item.created_at.strftime('%B %e')
         %td= item.warranty_end
         %td= link_to item.user.name, user_path(item.user) unless item.user.nil?
-= link_to 'Add Serial number', new_serial_number_path, class: "btn btn-success"
+
+
+= simple_form_for(@new_serial) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :item_id, as: :hidden, input_html: { value: @item.id }
+    = f.input :number
+    = f.input :warranty_end
+
+  .form-actions
+    = f.button :submit, class: "btn btn-success"
+
+
+
+

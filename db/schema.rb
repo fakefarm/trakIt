@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130130203621) do
+ActiveRecord::Schema.define(:version => 20130130225215) do
 
   create_table "asset_histories", :force => true do |t|
     t.string   "comments"
@@ -63,6 +63,16 @@ ActiveRecord::Schema.define(:version => 20130130203621) do
   add_index "comments", ["checkout_id"], :name => "index_comments_on_checkout_id"
   add_index "comments", ["commentable_id", "commentable_type"], :name => "index_comments_on_commentable_id_and_commentable_type"
 
+  create_table "item_features", :force => true do |t|
+    t.string   "feature_key"
+    t.string   "feature_value"
+    t.integer  "item_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "item_features", ["item_id"], :name => "index_item_features_on_item_id"
+
   create_table "items", :force => true do |t|
     t.string   "name"
     t.integer  "quantity"
@@ -85,6 +95,15 @@ ActiveRecord::Schema.define(:version => 20130130203621) do
 
   add_index "serial_numbers", ["item_id"], :name => "index_serial_numbers_on_item_id"
   add_index "serial_numbers", ["user_id"], :name => "index_serial_numbers_on_user_id"
+
+  create_table "user_comments", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "comment"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "user_comments", ["user_id"], :name => "index_user_comments_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "name"

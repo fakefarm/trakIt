@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Feature key:
+  = @item_feature.feature_key
+%p
+  %b Feature value:
+  = @item_feature.feature_value
+%p
+  %b Item:
+  = @item_feature.item_id
+
+= link_to 'Edit', edit_item_feature_path(@item_feature)
+\|
+= link_to 'Back', item_features_path

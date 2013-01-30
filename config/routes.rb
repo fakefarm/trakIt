@@ -1,6 +1,12 @@
 InventoryApp2::Application.routes.draw do
 
 
+  resources :item_features
+
+
+  resources :user_comments
+
+
   resources :assignment_histories
 
 
