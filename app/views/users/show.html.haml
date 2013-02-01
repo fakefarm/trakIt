@@ -43,6 +43,7 @@
   - @user.user_comments.each do |entry|
     %tr
       %td.span8= entry.comment
+      
       %td.span4= entry.created_at.strftime("%B %e")
 
 

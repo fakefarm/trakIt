@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130130225215) do
+ActiveRecord::Schema.define(:version => 20130131220725) do
 
   create_table "asset_histories", :force => true do |t|
     t.string   "comments"
@@ -30,6 +30,16 @@ ActiveRecord::Schema.define(:version => 20130130225215) do
   end
 
   add_index "assignment_histories", ["checkout_id"], :name => "index_assignment_histories_on_checkout_id"
+
+  create_table "bundle_attributes", :force => true do |t|
+    t.string   "bundle_key"
+    t.string   "bundle_value"
+    t.integer  "bundle_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "bundle_attributes", ["bundle_id"], :name => "index_bundle_attributes_on_bundle_id"
 
   create_table "bundles", :force => true do |t|
     t.datetime "created_at", :null => false

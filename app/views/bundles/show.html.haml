@@ -8,6 +8,24 @@
 
 <hr>
 
+- @bundle.bundle_attributes.each do |attr|
+  %p
+  = attr.bundle_key
+  \: 
+  = attr.bundle_value
+
+= simple_form_for(@attributes) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :bundle_key
+    = f.input :bundle_value
+    = f.input :bundle_id, as: :hidden, input_html: { value: @bundle.id }
+
+  .form-actions
+    = f.button :submit
+
+
 %h3 Items
 %table.table.table
   %tr
@@ -19,4 +37,3 @@
       %td= link_to asset.name, asset
       %td= asset.quantity
         
-<hr>

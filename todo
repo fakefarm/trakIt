@@ -1,39 +1,35 @@
+MVP Features:
+ ☐ Bundles as attributes that multiply
+
+Questions:
+
+ ☐ Moving the find into it's own model?
+
 
 Misc:
- ☐ Add simple_form
- ☐ bring back polymorphic tags
  ☐ figure out hstore?
- ☐ incorporate comments as polymorphic
+ ☐ add attributes to bundle
 
-Checkout:
- ☐ make checkout show - 'assignment history'
- ☐ add tags to assignment show
+
+Chore:
  ☐ convert checkouts to assignments
+ ☐ make serial_level show - the 'asset history'
 
-
-Items:
- ☐ at asset level, have counts based on status
+ Change:
  ☐ Add waranty end to item / asset level, not serial number
  ☐ asset / item should have - make, model, warranty, title
+ ☐ make serial numbers have status
+
+
+Bug:
+ ☐ at asset level, have counts based on status
 
 
 
-New Item workflow idea:
+Features:
  ☐ New Item has bundle auto complete, and assets in bundle
  ☐ select existing asset via autofill, or make a new one if none exists there.
 
-
-Where to put comments:
- ☐ checkout#show
- ☐ item#show
- ☐ SerialNumber#show
- ☐ user#show
-
-
-Serial Numbers:
- ☐ make serial numbers have status
- ☐ make serial_level show - the 'asset history'
- ☐ add tags to serial show
 
 Next Steps:
  ☐ review zen desk api
@@ -45,4 +41,13 @@ Bundle:
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ checkout#show @done (13-01-31 08:45)
+ ✔ item#show @done (13-01-31 08:45)
+ ✔ SerialNumber#show @done (13-01-31 08:45)
+ ✔ user#show @done (13-01-31 08:45)
+ ✔ make checkout show - 'assignment history' @done (13-01-31 08:45)
+ ✔ add tags to assignment show @done (13-01-31 08:45)
+ ✔ Add simple_form @done (13-01-31 08:44)
+ ✔ bring back polymorphic tags @notDone - kept as non polymorphic @done (13-01-31 08:44)
+ ✔ incorporate comments as polymorphic @notDone - not worrying about poly-morphic @done (13-01-31 08:45)
  ✔ remove tags and use those as comments, just different fields;  tag, comment, status @done (13-01-28 10:55)

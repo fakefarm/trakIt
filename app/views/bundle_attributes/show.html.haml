@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Bundle key:
+  = @bundle_attribute.bundle_key
+%p
+  %b Bundle value:
+  = @bundle_attribute.bundle_value
+%p
+  %b Bundle:
+  = @bundle_attribute.bundle_id
+
+= link_to 'Edit', edit_bundle_attribute_path(@bundle_attribute)
+\|
+= link_to 'Back', bundle_attributes_path

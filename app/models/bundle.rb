@@ -3,4 +3,5 @@ class Bundle < ActiveRecord::Base
 
   has_many :items
   has_many :comments, as: :commentable
+  has_many :bundle_attributes
 end

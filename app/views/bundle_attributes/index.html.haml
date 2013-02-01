@@ -1,0 +1,23 @@
+%h1 Listing bundle_attributes
+
+%table
+  %tr
+    %th Bundle key
+    %th Bundle value
+    %th Bundle
+    %th
+    %th
+    %th
+
+  - @bundle_attributes.each do |bundle_attribute|
+    %tr
+      %td= bundle_attribute.bundle_key
+      %td= bundle_attribute.bundle_value
+      %td= bundle_attribute.bundle_id
+      %td= link_to 'Show', bundle_attribute
+      %td= link_to 'Edit', edit_bundle_attribute_path(bundle_attribute)
+      %td= link_to 'Destroy', bundle_attribute, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Bundle attribute', new_bundle_attribute_path

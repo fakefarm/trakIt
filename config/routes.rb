@@ -1,6 +1,9 @@
 InventoryApp2::Application.routes.draw do
 
 
+  resources :bundle_attributes
+
+
   resources :item_features
 
 

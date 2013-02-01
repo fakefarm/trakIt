@@ -1,44 +1,36 @@
 class BundlesController < ApplicationController
-  # GET /bundles
-  # GET /bundles.json
   def index
     @bundles = Bundle.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html 
       format.json { render json: @bundles }
     end
   end
 
-  # GET /bundles/1
-  # GET /bundles/1.json
   def show
     @bundle = Bundle.find(params[:id])
+    @attributes = BundleAttribute.new
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html 
       format.json { render json: @bundle }
     end
   end
 
-  # GET /bundles/new
-  # GET /bundles/new.json
   def new
     @bundle = Bundle.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html 
       format.json { render json: @bundle }
     end
   end
 
-  # GET /bundles/1/edit
   def edit
     @bundle = Bundle.find(params[:id])
   end
 
-  # POST /bundles
-  # POST /bundles.json
   def create
     @bundle = Bundle.new(params[:bundle])
     
@@ -54,8 +46,6 @@ class BundlesController < ApplicationController
     end
   end
 
-  # PUT /bundles/1
-  # PUT /bundles/1.json
   def update
     @bundle = Bundle.find(params[:id])
 
@@ -70,8 +60,6 @@ class BundlesController < ApplicationController
     end
   end
 
-  # DELETE /bundles/1
-  # DELETE /bundles/1.json
   def destroy
     @bundle = Bundle.find(params[:id])
     @bundle.destroy
