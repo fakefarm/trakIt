@@ -3,7 +3,7 @@ class CheckoutsController < ApplicationController
     @checkouts = Checkout.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html 
       format.json { render json: @checkouts }
     end
   end
@@ -13,17 +13,16 @@ class CheckoutsController < ApplicationController
     @assignment = AssignmentHistory.new
     
     respond_to do |format|
-      format.html # show.html.erb
+      format.html 
       format.json { render json: @checkout }
     end
   end
 
   def new
     @checkout = Checkout.new
-    @comment = Comment.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html 
       format.json { render json: @checkout }
     end
   end
@@ -34,7 +33,7 @@ class CheckoutsController < ApplicationController
 
   def create
     @checkout = Checkout.new(params[:checkout])
-
+    
     respond_to do |format|
       if @checkout.save && @checkout.item.trackable?
         format.html { redirect_to serial_assignment_path, notice: 'Checkout was successfully created.' }

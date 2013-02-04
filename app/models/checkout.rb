@@ -1,6 +1,6 @@
 class Checkout < ActiveRecord::Base
   attr_accessible :name, :quantity, :status, :user_id, :item_id, 
-                  :checkout_serial
+                  :checkout_serial, :due_date
   
   belongs_to :user
   belongs_to :item

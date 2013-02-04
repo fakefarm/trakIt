@@ -18,6 +18,12 @@
   .field
     = f.label :status
     = f.text_field :status  
+  .field
+    = f.label :Due_Date
+    = f.select :due_date, options_for_select(checkout_dates), :include_blank => true
+
 
   .actions
     = f.submit 'Save'
+
+

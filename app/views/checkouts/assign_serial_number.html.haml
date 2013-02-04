@@ -8,7 +8,7 @@
   -@checkout.item.serial_numbers.each do |n|
     %tr
       %td= link_to n.number, edit_serial_number_path(n)
-      %td= n.user.name
+      %td= n.user.name unless n.user.nil?
 
 / %p=@serial_number
 

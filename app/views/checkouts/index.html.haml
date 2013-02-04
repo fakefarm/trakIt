@@ -5,7 +5,7 @@
     %th Date Out
     %th User
     %th Item
-    %th Quantity
+    %th Due Date
     %th Status
     
 
@@ -14,7 +14,11 @@
       %td= link_to checkout.created_at.strftime("%b %e"), checkout
       %td= checkout.user.name
       %td= checkout.item.name
-      %td= checkout.quantity
+      %td
+        = distance_of_time_in_words(Time.now, checkout.due_date) unless checkout.due_date.nil?
+        \(
+        = checkout.due_date.strftime("%B %e") unless checkout.due_date.nil?
+        \)
       %td= checkout.status
       %td= link_to 'Edit', edit_checkout_path(checkout)
       %td= link_to 'Destroy', checkout, method: :delete, data: { confirm: 'Are you sure?' }

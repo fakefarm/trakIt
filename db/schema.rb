@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130131220725) do
+ActiveRecord::Schema.define(:version => 20130204225039) do
 
   create_table "asset_histories", :force => true do |t|
     t.string   "comments"
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(:version => 20130131220725) do
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
     t.string   "checkout_serial"
+    t.datetime "due_date"
   end
 
   add_index "checkouts", ["item_id"], :name => "index_checkouts_on_item_id"
