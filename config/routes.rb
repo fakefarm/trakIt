@@ -1,19 +1,11 @@
 InventoryApp2::Application.routes.draw do
 
+  root to: 'static_pages#welcome'
 
   resources :bundle_attributes
-
-
   resources :item_features
-
-
   resources :user_comments
-
-
   resources :assignment_histories
-
-
-  root to: 'static_pages#welcome'
 
   match 'checkouts/assign-serial-number' => 'checkouts#assign_serial_number',     as: 'serial_assignment'
 
