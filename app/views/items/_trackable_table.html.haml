@@ -1,0 +1,16 @@
+- if @item.trackable?
+
+  %h3 Serial Numbers
+  %table.table
+    %tr
+      %th Number
+      %th Date Created
+      %th Warranty End
+      %th Assigned to
+
+    - @serials.each do |item|
+      %tr
+        %td= link_to item.number, edit_serial_number_path(item)
+        %td= item.created_at.strftime('%B %e')
+        %td= item.warranty_end
+        %td= link_to item.user.name, user_path(item.user) unless item.user.nil?

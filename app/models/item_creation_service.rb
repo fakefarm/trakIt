@@ -20,8 +20,7 @@ class ItemCreationService
       not_a_user = 2
 
       1.upto @item.quantity do 
-        x = SerialNumber.new({ number: "Enter Serial Numbers", item_id: @item.id, user_id: not_a_user })
-        x.save
+        SerialNumber.create({ number: "Enter Serial Numbers", item_id: @item.id, user_id: not_a_user })
       end
     end
   end

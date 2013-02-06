@@ -11,7 +11,7 @@
 
   - @serial_numbers.each do |serial_number|
     %tr
-      %td= link_to serial_number.number, edit_serial_number_path(serial_number)
+      %td= link_to serial_number.number, serial_number_path(serial_number)
       %td= serial_number.warranty_end
       %td= serial_number.item.name
       %td= serial_number.user.name unless serial_number.user.nil?

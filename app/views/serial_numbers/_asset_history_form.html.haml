@@ -1,0 +1,10 @@
+= simple_form_for(@asset_history) do |f|
+  = f.error_notification
+
+  = f.input :serial_number_id, as: :hidden, input_html: { value: @serial_number.id }
+
+  .form-inputs
+    = f.input :comments
+
+  .form-actions
+    = f.button :submit

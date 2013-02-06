@@ -24,14 +24,7 @@
 \|
 = link_to 'Back', checkouts_path
 
-= simple_form_for(@assignment) do |f|
-  = f.error_notification
-
-  = f.input :checkout_id, as: :hidden, input_html: { value: @checkout.id }
-  = f.input :note, as: :text, input_html: { rows: 3 }
-
-  .form-actions
-    = f.button :submit
+ 
 
 - @checkout.assignment_histories.each do |historical|
   %p

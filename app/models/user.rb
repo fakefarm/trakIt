@@ -1,8 +1,8 @@
 class User < ActiveRecord::Base
   attr_accessible :name
 
-  validates :name, :presence => true, 
-                   :uniqueness => true
+  validates :name, presence: true, 
+                   uniqueness: true
   
   has_many :user_comments
   has_many :checkouts

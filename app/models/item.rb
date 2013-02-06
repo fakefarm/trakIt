@@ -1,6 +1,4 @@
 class Item < ActiveRecord::Base
-
-  #TODO - change to ASSET
   
   attr_accessible :name, :quantity, :trackable, :bundle_id
 
@@ -9,7 +7,6 @@ class Item < ActiveRecord::Base
   has_many :users, through: :checkouts
   has_many :serial_numbers, dependent: :destroy
   has_many :item_features
-  
 
   validates :quantity, presence: true
 

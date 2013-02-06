@@ -19,17 +19,7 @@
 \|
 = link_to 'Back', serial_numbers_path
 
-= simple_form_for(@asset_history) do |f|
-  = f.error_notification
-
-  = f.input :serial_number_id, as: :hidden, input_html: { value: @serial_number.id }
-
-  .form-inputs
-    = f.input :comments
-
-  .form-actions
-    = f.button :submit
-
+= render 'asset_history_form'
 
 -@serial_number.asset_histories.each do |entry|
   %p= entry.comments

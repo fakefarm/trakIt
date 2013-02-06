@@ -6,17 +6,7 @@
 \|
 = link_to 'Back', users_path
 
-= simple_form_for(@comments) do |f|
-  = f.error_notification
-
-  .form-inputs
-    = f.input :user_id, as: :hidden, input_html: { value: @user.id}
-    = f.input :comment, as: :text, input_html: { rows: 3 }
-
-
-  .form-actions
-    = f.button :submit
-
+= render 'user_history_form'
 
 <hr>
 %h2= "#{pluralize(@user.items.count, "item")}  checked out"

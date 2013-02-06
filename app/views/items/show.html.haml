@@ -6,10 +6,10 @@
   %p
   %b Total Stock: 
   = @serials.count if @item.trackable?
+
   %p
   %b Bundle:
   = link_to @item.bundle.name, bundle_path(@item.bundle)
-
 
   - @item.item_features.each do |feature|
     %p
@@ -17,49 +17,7 @@
       \:
       =link_to feature.feature_value, edit_item_feature_path(feature)
 
-  = simple_form_for(@feature) do |f|
-    = f.error_notification
+  = render 'add_feature'
 
-    .form-inputs
-      = f.input :feature_key, label: "Label"
-      = f.input :feature_value, label: "Value"
-      = f.input :item_id, as: :hidden, input_html: { value: @item.id }
-
-    .form-actions
-      = f.button :submit, "Add Asset Attribute", class: "btn btn-success"
-
-  
-
-
-%hr
-- if @item.trackable?
-
-  %h3 Serial Numbers
-  %table.table
-    %tr
-      %th Number
-      %th Date Created
-      %th Warranty End
-      %th Assigned to
-
-    - @serials.each do |item|
-      %tr
-        %td= link_to item.number, edit_serial_number_path(item)
-        %td= item.created_at.strftime('%B %e')
-        %td= item.warranty_end
-        %td= link_to item.user.name, user_path(item.user) unless item.user.nil?
-
-= simple_form_for(@new_serial) do |f|
-  = f.error_notification
-
-  .form-inputs
-    = f.input :item_id, as: :hidden, input_html: { value: @item.id }
-    = f.input :number
-    = f.input :warranty_end
-
-  .form-actions
-    = f.button :submit, class: "btn btn-success"
-
-
-
-
+= render 'trackable_table'
+= render 'form_new_serial'

@@ -1,0 +1,11 @@
+- if @item.trackable?
+  = simple_form_for(@new_serial) do |f|
+    = f.error_notification
+
+    .form-inputs
+      = f.input :item_id, as: :hidden, input_html: { value: @item.id }
+      = f.input :number
+      = f.input :warranty_end
+
+    .form-actions
+      = f.button :submit, class: "btn btn-success"
