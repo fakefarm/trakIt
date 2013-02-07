@@ -6,7 +6,7 @@ module SerialNumbersHelper
   end
 
   #index
-  def employes_name(serial_number)
+  def employee_name(serial_number)
     serial_number.user.name unless serial_number.user.nil?
   end
 
