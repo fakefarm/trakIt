@@ -14,9 +14,10 @@
       %td= link_to serial_number.number, serial_number_path(serial_number)
       %td= serial_number.warranty_end
       %td= serial_number.item.name
-      %td= serial_number.user.name unless serial_number.user.nil?
+      %td= employee_name(serial_number)
       %td= link_to 'Destroy', serial_number, method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
 
 = link_to 'New Serial number', new_serial_number_path
+

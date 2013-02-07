@@ -10,10 +10,10 @@
   = @serial_number.warranty_end
 %p
   %b Item:
-  = @serial_number.item.name unless @serial_number.item.name.nil?
+  = serial_no
 %p
   %b User:
-  = @serial_number.user.name unless  @serial_number.user.nil?
+  = serial_user
 
 = link_to 'Edit', edit_serial_number_path(@serial_number)
 \|
@@ -23,4 +23,3 @@
 
 -@serial_number.asset_histories.each do |entry|
   %p= entry.comments
-

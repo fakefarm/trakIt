@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130204225039) do
+ActiveRecord::Schema.define(:version => 20130206224526) do
 
   create_table "asset_histories", :force => true do |t|
     t.string   "comments"
@@ -61,18 +61,6 @@ ActiveRecord::Schema.define(:version => 20130204225039) do
 
   add_index "checkouts", ["item_id"], :name => "index_checkouts_on_item_id"
   add_index "checkouts", ["user_id"], :name => "index_checkouts_on_user_id"
-
-  create_table "comments", :force => true do |t|
-    t.text     "notes"
-    t.integer  "checkout_id"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
-    t.integer  "commentable_id"
-    t.string   "commentable_type"
-  end
-
-  add_index "comments", ["checkout_id"], :name => "index_comments_on_checkout_id"
-  add_index "comments", ["commentable_id", "commentable_type"], :name => "index_comments_on_commentable_id_and_commentable_type"
 
   create_table "item_features", :force => true do |t|
     t.string   "feature_key"

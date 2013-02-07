@@ -15,9 +15,9 @@
       %td= checkout.user.name
       %td= checkout.item.name
       %td
-        = distance_of_time_in_words(Time.now, checkout.due_date) unless checkout.due_date.nil?
+        = remaining_time_of_rental(checkout)
         \(
-        = checkout.due_date.strftime("%B %e") unless checkout.due_date.nil?
+        = due_date(checkout)
         \)
       %td= checkout.status
       %td= link_to 'Edit', edit_checkout_path(checkout)
@@ -26,3 +26,6 @@
 %br
 
 = link_to 'New Checkout', new_checkout_path, class: "btn btn-success"
+
+
+

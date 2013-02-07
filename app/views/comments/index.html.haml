@@ -1,8 +1,0 @@
-%h1 Listing comments
-
-.comments
-  - @comments.each do |comment|
-    .comment
-      = comment.notes
-
-= link_to "new comment", [:new, @commentable, :comment ]
