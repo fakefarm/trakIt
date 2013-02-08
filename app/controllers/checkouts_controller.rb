@@ -32,14 +32,18 @@ class CheckoutsController < ApplicationController
   end
 
   def create
+    @quantity_reducer = CheckoutQuantityReducerService.new(params[:checkout])
     @checkout = Checkout.new(params[:checkout])
-    
+
     respond_to do |format|
-      if @checkout.save && @checkout.item.trackable?
-        format.html { redirect_to serial_assignment_path, notice: 'Checkout was successfully created.' }
-        format.json { render json: @checkout, status: :created, location: @checkout }
-      elsif @checkout.save
-        format.html { redirect_to checkouts_path, notice: 'Checkout was successfully created.' }
+      
+      if @quantity_reducer.save
+        if @checkout.item.trackable?
+          format.html { redirect_to serial_assignment_path, notice: 'Checkout was successfully created.' }
+          format.json { render json: @checkout, status: :created, location: @checkout }
+        else
+          format.html { redirect_to checkouts_path, notice: 'Checkout was successfully created.' }
+        end
       else
         format.html { render action: "new" }
         format.json { render json: @checkout.errors, status: :unprocessable_entity }
