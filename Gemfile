@@ -24,6 +24,11 @@ gem 'jquery-rails'
 
 group :test do
   gem 'capybara', '1.1.2'
+  gem 'cucumber-rails', :require => false
+  gem 'database_cleaner'
+  gem 'launchy'
+  gem 'guard-rspec'
+  gem 'rb-fsevent', '~> 0.9.1'
 end
 
 group :production do
