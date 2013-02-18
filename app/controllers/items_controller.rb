@@ -37,19 +37,20 @@ class ItemsController < ApplicationController
   def create
     @item_creator = ItemCreationService.new(params[:item])
     @bundle_attributes = @item_creator.item.bundle.bundle_attributes
+    @item = @item_creator.item
 
     respond_to do |format|
-      if @item_creator.save
+      if @item.save
 
         @bundle_attributes.each do |attribute|
-          ItemFeature.create(feature_key: attribute.bundle_key, feature_value: attribute.bundle_value, item_id: @item_creator.item.id )
+          ItemFeature.create(feature_key: attribute.bundle_key, feature_value: attribute.bundle_value, item_id: @item.id )
         end
 
-        format.html { redirect_to @item_creator.item, notice: 'Item was successfully created.' }
-        format.json { render json: @item_creator.item, status: :created, location: @item_creator.item }
+        format.html { redirect_to @item, notice: 'Item was successfully created.' }
+        format.json { render json: @item, status: :created, location: @item }
       else
         format.html { render action: "new" }
-        format.json { render json: @item_creator.item.errors, status: :unprocessable_entity }
+        format.json { render json: @item.errors, status: :unprocessable_entity }
       end
     end
   end

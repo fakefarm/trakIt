@@ -6,12 +6,13 @@
       %ul
         - @item.errors.full_messages.each do |msg|
           %li= msg
+          
   .control-group
     .field
-      = f.label :bundle
+      = f.label :bundle_id
       = f.collection_select :bundle_id, Bundle.all, :id, :name
     .field
-      = f.label :Item_name
+      = f.label :name
       = f.text_field :name
     .field
       = f.label :trackable

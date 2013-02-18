@@ -1,6 +1,6 @@
 class ItemCreationService
 
-  attr_reader :item
+  attr_reader :item, :quantity
 
   def initialize(attributes)
     @item = Item.new(attributes)
