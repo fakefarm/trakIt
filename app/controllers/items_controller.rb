@@ -36,16 +36,10 @@ class ItemsController < ApplicationController
 
   def create
     @item_creator = ItemCreationService.new(params[:item])
-    @bundle_attributes = @item_creator.item.bundle.bundle_attributes
     @item = @item_creator.item
 
     respond_to do |format|
-      if @item.save
-
-        @bundle_attributes.each do |attribute|
-          ItemFeature.create(feature_key: attribute.bundle_key, feature_value: attribute.bundle_value, item_id: @item.id )
-        end
-
+      if @item_creator.save
         format.html { redirect_to @item, notice: 'Item was successfully created.' }
         format.json { render json: @item, status: :created, location: @item }
       else
