@@ -25,10 +25,12 @@ gem 'jquery-rails'
 group :test do
   gem 'capybara', '1.1.2'
   gem 'cucumber-rails', :require => false
+  gem 'cucumber-websteps'
   gem 'database_cleaner'
   gem 'launchy'
   gem 'guard-rspec'
   gem 'rb-fsevent', '~> 0.9.1'
+  gem 'pickle'
 end
 
 group :production do
