@@ -20,7 +20,6 @@ class ItemCreationService
     if @item.save
       add_serial_numbers
       add_bundle_attributes
-      true
     end
   end
 
