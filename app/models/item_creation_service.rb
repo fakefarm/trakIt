@@ -16,13 +16,15 @@ class ItemCreationService
     @item = Item.new(attributes)
   end
 
-  def save  
+  def save
     if @item.save
       add_serial_numbers
       add_bundle_attributes
       true
     end
   end
+
+private
 
   def add_bundle_attributes
     @bundle_attributes = @item.bundle.bundle_attributes
