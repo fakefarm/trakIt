@@ -39,7 +39,7 @@ private
       not_a_user = 2
 
       1.upto @item.quantity do 
-        SerialNumber.create({ number: "Enter Serial Numbers", item_id: @item.id, user_id: not_a_user })
+       @item.serial_numbers.create({ number: "Enter Serial Numbers", user_id: not_a_user })
       end
     end
   end
