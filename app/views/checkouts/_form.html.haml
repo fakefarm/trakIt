@@ -7,10 +7,10 @@
           %li= msg
 
   .field
-    = f.label :name
+    = f.label :user_id
     = f.collection_select :user_id, User.all, :id, :name
   .field
-    = f.label :item_name
+    = f.label :item_id
     = f.collection_select :item_id, Item.all, :id, :name
   .field
     = f.label :quantity
@@ -19,7 +19,7 @@
     = f.label :status
     = f.text_field :status  
   .field
-    = f.label :Due_Date
+    = f.label :due_date
     = f.select :due_date, options_for_select(checkout_dates), :include_blank => true
 
 
