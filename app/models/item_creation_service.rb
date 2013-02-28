@@ -28,7 +28,7 @@ private
   def add_bundle_attributes
     @bundle_attributes = @item.bundle.bundle_attributes
     @bundle_attributes.each do |attribute|
-      ItemFeature.create(feature_key: attribute.bundle_key, feature_value: attribute.bundle_value, item_id: @item.id )
+      @item.item_features.create(feature_key: attribute.bundle_key, feature_value: attribute.bundle_value )
     end
   end
 
