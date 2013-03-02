@@ -4,8 +4,8 @@
 
 .row
   %p
-  %b Total Stock: 
-  = @serials.count if @item.trackable?
+  %b Available Stock: 
+  = @item.quantity
 
   %p
   %b Bundle:
