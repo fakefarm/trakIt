@@ -5,18 +5,8 @@ module SerialNumbersHelper
     serial_number.user.name unless serial_number.user.nil?
   end
 
-  #index
-  def employee_name(serial_number)
-    serial_number.user.name unless serial_number.user.nil?
-  end
-
   #show 
   def serial_no
     @serial_number.item.name unless @serial_number.item.name.nil?
-  end
-
-  #show
-  def serial_user
-    @serial_number.user.name unless @serial_number.user.nil?
   end
 end
