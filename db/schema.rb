@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130304215459) do
+ActiveRecord::Schema.define(:version => 20130304230509) do
 
   create_table "asset_histories", :force => true do |t|
     t.string   "comments"
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(:version => 20130304215459) do
     t.datetime "updated_at", :null => false
   end
 
-  add_index "assets", ["bundle_id"], :name => "index_assets_on_bundle_id"
+  add_index "assets", ["bundle_id"], :name => "index_items_on_bundle_id"
 
   create_table "assignment_histories", :force => true do |t|
     t.integer  "checkout_id"
@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(:version => 20130304215459) do
     t.string   "name"
     t.integer  "quantity"
     t.integer  "user_id"
-    t.integer  "item_id"
+    t.integer  "asset_id"
     t.string   "status"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
@@ -70,29 +70,29 @@ ActiveRecord::Schema.define(:version => 20130304215459) do
     t.datetime "due_date"
   end
 
-  add_index "checkouts", ["item_id"], :name => "index_checkouts_on_item_id"
+  add_index "checkouts", ["asset_id"], :name => "index_checkouts_on_item_id"
   add_index "checkouts", ["user_id"], :name => "index_checkouts_on_user_id"
 
   create_table "item_features", :force => true do |t|
     t.string   "feature_key"
     t.string   "feature_value"
-    t.integer  "item_id"
+    t.integer  "asset_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end
 
-  add_index "item_features", ["item_id"], :name => "index_item_features_on_item_id"
+  add_index "item_features", ["asset_id"], :name => "index_item_features_on_item_id"
 
   create_table "serial_numbers", :force => true do |t|
     t.string   "number"
     t.date     "warranty_end"
-    t.integer  "item_id"
+    t.integer  "asset_id"
     t.integer  "user_id"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end
 
-  add_index "serial_numbers", ["item_id"], :name => "index_serial_numbers_on_item_id"
+  add_index "serial_numbers", ["asset_id"], :name => "index_serial_numbers_on_item_id"
   add_index "serial_numbers", ["user_id"], :name => "index_serial_numbers_on_user_id"
 
   create_table "user_comments", :force => true do |t|
