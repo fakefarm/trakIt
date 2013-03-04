@@ -36,11 +36,18 @@ private
     if @item.trackable?
       
       # Made a "(none)" user to default to so that editing Serial Numbers doesn't auto select a user.
-      not_a_user = 2
+      # not_a_user = 2
 
       1.upto @item.quantity do 
-       @item.serial_numbers.create({ number: "Enter Serial Numbers", user_id: not_a_user })
+       @item.serial_numbers.create({ number: "Enter Serial Numbers" })
       end
     end
   end
 end
+
+
+
+
+
+
+
