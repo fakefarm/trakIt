@@ -53,7 +53,7 @@ describe AssetCreationService do
                                               bundle_id: bundle.id
                                              })
         asset_creation.save
-        asset_feature = asset_creation.asset.asset_features.first
+        asset_feature = asset_creation.asset.item_features.first
 
         asset_feature.feature_key.should == bundle_att.bundle_key
         asset_feature.feature_value.should == bundle_att.bundle_value

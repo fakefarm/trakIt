@@ -16,7 +16,7 @@ describe CheckoutsHelper do
     it 'formats date' do
        checkout = Checkout.new(quantity: 1, 
                                user_id: 1, 
-                               item_id: 1, 
+                               asset_id: 1, 
                                due_date: "2013-03-02 10:29:06 -0700"
                               )
       due_date(checkout).should == "March  2"
@@ -27,10 +27,10 @@ describe CheckoutsHelper do
     it 'formats time into words' do
        checkout = Checkout.new(quantity: 1, 
                                user_id: 1, 
-                               item_id: 1, 
+                               asset_id: 1, 
                                due_date: "2013-03-02 10:29:06 -0700"
                               )
-      remaining_time_of_rental(checkout).should == "15 minutes"
+      remaining_time_of_rental(checkout).should == "2 days"
     end
   end
 
