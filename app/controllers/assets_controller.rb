@@ -12,7 +12,7 @@ class AssetsController < ApplicationController
     @asset = Asset.find(params[:id])
     @serials = SerialNumber.where(asset_id: @asset)
     @checkouts = Checkout.where(asset_id: @asset)
-    @feature = AssetFeature.new
+    @feature = ItemFeature.new
     @new_serial = SerialNumber.new
  
     respond_to do |format|
