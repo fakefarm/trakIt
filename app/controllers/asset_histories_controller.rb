@@ -32,8 +32,13 @@ class AssetHistoriesController < ApplicationController
 
   def create
     # params[:asset_history] = {serial_number_id: 24, comments: 'hi'}
-    @asset_history = AssetHistory.create(params[:asset_history])
-    redirect_to serial_number_path(@asset_history.serial_number_id)
+    @asset_history = AssetHistory.new(params[:asset_history])
+    if @asset_history.save
+      redirect_to serial_number_path(@asset_history.serial_number_id)
+    else
+      redirect_to serial_number_path(@asset_history.serial_number_id), notice: @asset_history.errors.full_messages
+    end
+
     # @asset_history = AssetHistory.new(params[:asset_history])
 
     # respond_to do |format|

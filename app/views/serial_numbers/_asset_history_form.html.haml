@@ -1,10 +1,29 @@
-= simple_form_for(@asset_history) do |f|
-  = f.error_notification
+/ = simple_form_for(@asset_history) do |f|
+/   = f.error_notification
 
-  = f.input :serial_number_id, as: :hidden, input_html: { value: @serial_number.id }
+/   = f.input :serial_number_id, as: :hidden, input_html: { value: @serial_number.id }
 
-  .form-inputs
-    = f.input :comments
+/   .form-inputs
+/     = f.input :comments
 
-  .form-actions
-    = f.button :submit
+/   .form-actions
+/     = f.button :submit
+
+
+= form_for @asset_history do |f|
+  - if @asset_history.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@asset_history.errors.count, "error")} prohibited this asset_history from being saved:"
+      %ul
+        - @asset_history.errors.full_messages.each do |msg|
+          %li= msg
+
+  = f.hidden_field :serial_number_id, value: @serial_number.id
+
+  .field
+    = f.label :comments
+    = f.text_field :comments
+
+
+  .actions
+    = f.submit 'Save'

@@ -4,4 +4,5 @@ class AssetHistory < ActiveRecord::Base
   belongs_to :serial_number
 
   validates :serial_number_id, presence: true
+  validates :comments, presence: true
 end
