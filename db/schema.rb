@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130206224526) do
+ActiveRecord::Schema.define(:version => 20130304215459) do
 
   create_table "asset_histories", :force => true do |t|
     t.string   "comments"
@@ -21,6 +21,17 @@ ActiveRecord::Schema.define(:version => 20130206224526) do
   end
 
   add_index "asset_histories", ["serial_number_id"], :name => "index_asset_histories_on_serial_number_id"
+
+  create_table "assets", :force => true do |t|
+    t.string   "name"
+    t.integer  "quantity"
+    t.integer  "bundle_id"
+    t.boolean  "trackable"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "assets", ["bundle_id"], :name => "index_assets_on_bundle_id"
 
   create_table "assignment_histories", :force => true do |t|
     t.integer  "checkout_id"
@@ -71,17 +82,6 @@ ActiveRecord::Schema.define(:version => 20130206224526) do
   end
 
   add_index "item_features", ["item_id"], :name => "index_item_features_on_item_id"
-
-  create_table "items", :force => true do |t|
-    t.string   "name"
-    t.integer  "quantity"
-    t.integer  "bundle_id"
-    t.boolean  "trackable"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  add_index "items", ["bundle_id"], :name => "index_items_on_bundle_id"
 
   create_table "serial_numbers", :force => true do |t|
     t.string   "number"

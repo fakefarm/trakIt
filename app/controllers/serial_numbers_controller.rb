@@ -36,7 +36,7 @@ class SerialNumbersController < ApplicationController
     @default_to_none = User.find(2)
     respond_to do |format|
       if @serial_number.save
-        format.html { redirect_to item_path(@serial_number.item_id), notice: 'Serial number was successfully created.' }
+        format.html { redirect_to asset_path(@serial_number.asset_id), notice: 'Serial number was successfully created.' }
         format.json { render json: @serial_number, status: :created, location: @serial_number }
       else
         format.html { render action: "new" }
@@ -47,11 +47,11 @@ class SerialNumbersController < ApplicationController
 
   def update
     @serial_number = SerialNumber.find(params[:id])
-    @item = @serial_number.item_id
+    @asset = @serial_number.asset_id
 
     respond_to do |format|
       if @serial_number.update_attributes(params[:serial_number])
-        format.html { redirect_to item_path(@item), notice: 'Serial number was successfully updated.' }
+        format.html { redirect_to asset_path(@asset), notice: 'Serial number was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

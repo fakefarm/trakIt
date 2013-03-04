@@ -6,7 +6,7 @@
   %tr
     %th Date
     %th User
-    %th Item
+    %th Asset
     %th Quantity
     %th Serial Number
     %th Status
@@ -15,7 +15,7 @@
   %tr
     %td=  @checkout.user.created_at.strftime('%B %e')
     %td=  @checkout.user.name
-    %td=  @checkout.item.name
+    %td=  @checkout.asset.name
     %td=  @checkout.quantity
     %td=  @checkout.checkout_serial
     %td=  @checkout.status

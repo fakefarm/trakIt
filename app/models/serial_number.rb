@@ -1,10 +1,10 @@
 class SerialNumber < ActiveRecord::Base
-  attr_accessible :number, :warranty_end, :item_id, :user_id, :checkout_id
+  attr_accessible :number, :warranty_end, :asset_id, :user_id, :checkout_id
 
-  belongs_to :item
+  belongs_to :asset
   belongs_to :user
   belongs_to :checkout
-  has_many :asset_histories
+  has_many :item_histories
   
   validates :number, presence: true
 

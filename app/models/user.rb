@@ -6,6 +6,6 @@ class User < ActiveRecord::Base
 
   has_many :user_comments
   has_many :checkouts, dependent: :destroy
-  has_many :items, through: :checkouts
+  has_many :assets, through: :checkouts
   has_many :serial_numbers     
 end

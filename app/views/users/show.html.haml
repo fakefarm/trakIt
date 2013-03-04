@@ -9,7 +9,7 @@
 = render 'user_history_form'
 
 <hr>
-%h2= "#{pluralize(@user.items.count, "item")}  checked out"
+%h2= "#{pluralize(@user.assets.count, "asset")}  checked out"
 
 
 %table.table
@@ -20,8 +20,8 @@
     %th Checkout Serial
   - @checkout.each do |thing|
     %tr
-      %td= link_to thing.item.name, item_path(thing.item_id)
-      %td= thing.item.created_at.strftime("%B %e")
+      %td= link_to thing.asset.name, asset_path(thing.asset_id)
+      %td= thing.asset.created_at.strftime("%B %e")
       %td= thing.status
       %td Query where item user_id == user_id
 

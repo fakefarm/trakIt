@@ -16,8 +16,8 @@
       = f.label :warranty_end
       = f.date_select :warranty_end
     .field
-      = f.label :item
-      = f.collection_select :item_id, Item.all, :id, :name
+      = f.label :asset
+      = f.collection_select :asset_id, Asset.all, :id, :name
     .actions
       = f.submit 'Save', class: "btn btn-success"
 

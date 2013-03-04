@@ -4,7 +4,7 @@
   %tr
     %th Date Out
     %th User
-    %th Item
+    %th Asset
     %th Due Date
     %th Status
     
@@ -13,7 +13,7 @@
     %tr
       %td= link_to checkout.created_at.strftime("%b %e"), checkout
       %td= checkout.user.name
-      %td= checkout.item.name
+      %td= checkout.asset.name
       %td
         = remaining_time_of_rental(checkout)
         \(

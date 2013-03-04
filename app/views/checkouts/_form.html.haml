@@ -10,8 +10,8 @@
     = f.label :user_id
     = f.collection_select :user_id, User.all, :id, :name
   .field
-    = f.label :item_id
-    = f.collection_select :item_id, Item.all, :id, :name
+    = f.label :asset_id
+    = f.collection_select :asset_id, Asset.all, :id, :name
   .field
     = f.label :quantity
     = f.number_field :quantity

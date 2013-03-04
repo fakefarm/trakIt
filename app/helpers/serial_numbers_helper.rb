@@ -7,6 +7,6 @@ module SerialNumbersHelper
 
   #show 
   def serial_no
-    @serial_number.item.name unless @serial_number.item.name.nil?
+    @serial_number.asset.name unless @serial_number.asset.name.nil?
   end
 end

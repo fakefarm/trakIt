@@ -1,0 +1,9 @@
+.container.fluid
+  .row-fluid
+    %h1 Editing asset
+    .form-horizontal
+      = render 'form_edit_asset'
+
+      = link_to 'Show', @asset
+      \|
+      = link_to 'Back', assets_path

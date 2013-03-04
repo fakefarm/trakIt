@@ -7,7 +7,7 @@
     %th Number
     %th Current User
 
-  -@checkout.item.serial_numbers.each do |serial_number|
+  -@checkout.asset.serial_numbers.each do |serial_number|
     %tr
       %td= link_to serial_number.number, edit_serial_number_path(serial_number)
       %td= assigned_user_to_serial_number(serial_number) 

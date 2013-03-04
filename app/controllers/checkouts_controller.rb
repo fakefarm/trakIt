@@ -38,7 +38,7 @@ class CheckoutsController < ApplicationController
     respond_to do |format|
       
       if @quantity_reducer.save
-        if @checkout.item.trackable?
+        if @checkout.asset.trackable?
           format.html { redirect_to serial_assignment_path, notice: 'Checkout was successfully created.' }
           format.json { render json: @checkout, status: :created, location: @checkout }
         else

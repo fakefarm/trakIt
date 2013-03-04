@@ -14,8 +14,8 @@ class CheckoutQuantityReducerService
 private
 
   def reduce_quantity
-    updated_quantity = @checkout.item.quantity - @checkout.quantity
-    @checkout.item.update_attributes( quantity: updated_quantity )
+    updated_quantity = @checkout.asset.quantity - @checkout.quantity
+    @checkout.asset.update_attributes( quantity: updated_quantity )
   end
 end
 

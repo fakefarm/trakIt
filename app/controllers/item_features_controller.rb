@@ -35,7 +35,7 @@ class ItemFeaturesController < ApplicationController
 
     respond_to do |format|
       if @item_feature.save
-        format.html { redirect_to item_path(@item_feature.item_id), notice: 'Item feature was successfully created.' }
+        format.html { redirect_to asset_path(@item_feature.asset_id), notice: 'Asset feature was successfully created.' }
         format.json { render json: @item_feature, status: :created, location: @item_feature }
       else
         format.html { render action: "new" }
@@ -49,7 +49,7 @@ class ItemFeaturesController < ApplicationController
 
     respond_to do |format|
       if @item_feature.update_attributes(params[:item_feature])
-        format.html { redirect_to @item_feature, notice: 'Item feature was successfully updated.' }
+        format.html { redirect_to @item_feature, notice: 'Asset feature was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

@@ -1,0 +1,23 @@
+%p#notice= notice
+
+%h1= link_to @asset.name, edit_asset_path(@asset)
+
+.row
+  %p
+  %b Available Stock: 
+  = @asset.quantity
+
+  %p
+  %b Bundle:
+  = link_to @asset.bundle.name, bundle_path(@asset.bundle)
+
+  - @asset.item_features.each do |feature|
+    %p
+      %b=feature.feature_key
+      \:
+      =link_to feature.feature_value, edit_item_feature_path(feature)
+
+  = render 'add_feature'
+
+= render 'trackable_table'
+= render 'form_new_serial'

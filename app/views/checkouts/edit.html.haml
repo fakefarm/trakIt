@@ -12,8 +12,8 @@
     = f.label :name
     = f.collection_select :user_id, User.all, :id, :name
   .field
-    = f.label :item_name
-    = f.collection_select :item_id, Item.all, :id, :name
+    = f.label :asset_name
+    = f.collection_select :asset_id, Asset.all, :id, :name
   .field
     = f.label :quantity
     = f.number_field :quantity
@@ -27,10 +27,8 @@
   /   = f.label :Due_Date
   /   = f.select :due_date, options_for_select(checkout_dates), :include_blank => true
 
-
   .actions
     = f.submit 'Save'
-
 
 
 = link_to 'Show', @checkout

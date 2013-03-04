@@ -1,0 +1,17 @@
+- if @asset.trackable?
+
+  %h3 Serial Numbers
+  %table.table
+    %tr
+      %th Number
+      %th Date Created
+      %th Warranty End
+      %th Assigned to
+
+    - @serials.each do |asset|
+      %tr
+        %td= link_to asset.number, edit_serial_number_path(asset)
+        %td= asset.created_at.strftime('%B %e')
+        %td= asset.warranty_end
+        %td= link_to_user(asset)
+

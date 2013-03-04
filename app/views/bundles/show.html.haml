@@ -16,13 +16,13 @@
 
 = render 'form_attributes'
 
-%h3 Items
+%h3 Assets
 %table.table.table
   %tr
-    %th Item
+    %th Asset
     %th Quantity
     
-  - @bundle.items.each do |asset|
+  - @bundle.assets.each do |asset|
     %tr
       %td= link_to asset.name, asset
       %td= asset.quantity

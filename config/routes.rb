@@ -8,14 +8,14 @@ InventoryApp2::Application.routes.draw do
   resources :assignment_histories
   match 'asset_histories' => 'checkouts#index'
 
-  match 'checkouts/assign-serial-number' => 'checkouts#assign_serial_number',     as: 'serial_assignment'
+  match 'checkouts/assign-serial-number' => 'checkouts#assign_serial_number', as: 'serial_assignment'
 
   match 'about' => 'static_pages#about'
 
   resources :checkouts do
     resources :comments
   end
-  resources :items do
+  resources :assets do
     resources :comments
   end
   resources :asset_histories

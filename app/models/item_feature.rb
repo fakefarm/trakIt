@@ -1,5 +1,5 @@
-class ItemFeature < ActiveRecord::Base
-  attr_accessible :feature_key, :feature_value, :item_id
+class AssetFeature < ActiveRecord::Base
+  attr_accessible :feature_key, :feature_value, :asset_id
 
-  belongs_to :item
+  belongs_to :asset
 end

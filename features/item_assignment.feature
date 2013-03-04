@@ -1,7 +1,7 @@
 Feature: Assign (formerly checkout) item to a user
   In order to manage inventory
   As an admin
-  I want to assign items to users
+  I want to assign assets to users
 
   Scenario: Admin can view checkouts
     Given I am on the home page
@@ -13,7 +13,7 @@ Feature: Assign (formerly checkout) item to a user
     Given a item exists with name: "shoes", quantity: 1
     Given I am on the new checkout page
      When I select "michael.jordan" from "User"
-      And I select "shoes" from "Item"
+      And I select "shoes" from "Asset"
       And I fill in "Quantity" with "1" 
       And press "Save"
       Then I should see "Listing checkouts"
@@ -23,7 +23,7 @@ Feature: Assign (formerly checkout) item to a user
     Given a item exists with name: "shoes", quantity: 1
     Given I am on the new checkout page
      Given I select "michael.jordan" from "User"
-      And I select "shoes" from "Item"
+      And I select "shoes" from "Asset"
       And I fill in "Quantity" with "1" 
       And press "Save"
       Then I should see "Listing checkouts"
@@ -36,7 +36,7 @@ Feature: Assign (formerly checkout) item to a user
     Given a item exists with name: "shoes", quantity: 1
     Given I am on the new checkout page
      Given I select "michael.jordan" from "User"
-      And I select "shoes" from "Item"
+      And I select "shoes" from "Asset"
       And I fill in "Quantity" with "1" 
       And press "Save"
       Then I should see "Listing checkouts"
@@ -48,7 +48,7 @@ Feature: Assign (formerly checkout) item to a user
     Given a item exists with name: "shoes", quantity: 1
     Given I am on the new checkout page
      Given I select "michael.jordan" from "User"
-      And I select "shoes" from "Item"
+      And I select "shoes" from "Asset"
       And I fill in "Quantity" with "1" 
       And press "Save"
       Then I should see "Listing checkouts"
