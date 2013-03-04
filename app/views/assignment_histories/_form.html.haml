@@ -1,9 +1,9 @@
-= simple_form_for(@assignment_history) do |f|
+= simple_form_for(@assignment) do |f|
   = f.error_notification
 
-  .form-inputs
-    = f.input :checkout_id
-    = f.input :note
+
+  = f.hidden_field :checkout_id, value: @checkout.id
+  = f.input :note
 
   .form-actions
     = f.button :submit

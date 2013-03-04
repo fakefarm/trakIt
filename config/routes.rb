@@ -6,6 +6,7 @@ InventoryApp2::Application.routes.draw do
   resources :item_features
   resources :user_comments
   resources :assignment_histories
+  match 'asset_histories' => 'checkouts#index'
 
   match 'checkouts/assign-serial-number' => 'checkouts#assign_serial_number',     as: 'serial_assignment'
 

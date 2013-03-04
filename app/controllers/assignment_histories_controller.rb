@@ -1,11 +1,6 @@
 class AssignmentHistoriesController < ApplicationController
   def index
-    @assignment_histories = AssignmentHistory.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @assignment_histories }
-    end
+    redirect_to checkouts_path
   end
 
   def show
@@ -32,14 +27,12 @@ class AssignmentHistoriesController < ApplicationController
 
   def create
     @assignment_history = AssignmentHistory.new(params[:assignment_history])
-
     respond_to do |format|
       if @assignment_history.save
         format.html { redirect_to checkout_path(@assignment_history.checkout_id), notice: 'Assignment history was successfully created.' }
         format.json { render json: @assignment_history, status: :created, location: @assignment_history }
       else
-        format.html { render action: "new" }
-        format.json { render json: @assignment_history.errors, status: :unprocessable_entity }
+        redirect_to checkout_path(@assignment_history.checkout_id), notice: 'finally!'
       end
     end
   end
