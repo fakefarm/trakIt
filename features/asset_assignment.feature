@@ -1,4 +1,4 @@
-Feature: Assign (formerly checkout) item to a user
+Feature: Assign (formerly checkout) asset to a user
   In order to manage inventory
   As an admin
   I want to assign assets to users
@@ -10,7 +10,7 @@ Feature: Assign (formerly checkout) item to a user
 
   Scenario: Admin can create new checkouts
     Given a user exists with name: "michael.jordan"
-    Given a item exists with name: "shoes", quantity: 1
+    Given a asset exists with name: "shoes", quantity: 1
     Given I am on the new checkout page
      When I select "michael.jordan" from "User"
       And I select "shoes" from "Asset"
@@ -20,20 +20,19 @@ Feature: Assign (formerly checkout) item to a user
 
   Scenario: Admin can view individual checkouts
     Given a user exists with name: "michael.jordan"
-    Given a item exists with name: "shoes", quantity: 1
+    Given a asset exists with name: "shoes", quantity: 1
     Given I am on the new checkout page
      Given I select "michael.jordan" from "User"
       And I select "shoes" from "Asset"
       And I fill in "Quantity" with "1" 
       And press "Save"
       Then I should see "Listing checkouts"
-      And I follow "Feb 28"
+      And I follow "Mar 4"
       Then I should see "Assignment History"
-      And show me the page
 
   Scenario: Admin can edit checkouts
     Given a user exists with name: "michael.jordan"
-    Given a item exists with name: "shoes", quantity: 1
+    Given a asset exists with name: "shoes", quantity: 1
     Given I am on the new checkout page
      Given I select "michael.jordan" from "User"
       And I select "shoes" from "Asset"
@@ -45,7 +44,7 @@ Feature: Assign (formerly checkout) item to a user
 
   Scenario: Admin can delete checkouts
     Given a user exists with name: "michael.jordan"
-    Given a item exists with name: "shoes", quantity: 1
+    Given a asset exists with name: "shoes", quantity: 1
     Given I am on the new checkout page
      Given I select "michael.jordan" from "User"
       And I select "shoes" from "Asset"
