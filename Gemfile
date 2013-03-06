@@ -3,12 +3,12 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.11'
 gem "haml", "~> 3.1.7"
 gem 'bootstrap-sass', '2.1'
-gem 'RedCloth'
+#gem 'RedCloth'
 gem 'pry'
 gem 'annotate', ">=2.5.0"
 gem 'simple_form'
 
-group :development, :test do 
+group :development, :test do
   gem 'haml-rails'
   gem 'sqlite3'
   gem 'rspec-rails', '2.11.0'
