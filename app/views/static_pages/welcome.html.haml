@@ -1,3 +1,26 @@
 .container
-  =image_tag "flogo.jpg"
-  %h1 Inventory
+  =image_tag "rails.png"
+
+  %h1 Let's track some stuff
+  %p Manage inventory and the people using the inventory. Each section is designed to provide access to the inventory at different amounts. From All the inventory, down to a specific serial Number.
+
+  %h2 Inventory Views
+
+  %h3 Bundles
+  %em (Birdseye View)
+
+  %p Think of Bundles as very categories. Examples TV, Hard Drive, Laptop. This way you can view all of inventory based on the group.
+
+  %h3 Assets
+  %p groups are a collection of bundled inventory. For example 27" monitors.
+  You can add multiple assets at once.
+
+  %h3 Serial Numbers
+  %em (Specific Asset)
+
+  %p Each item that is trackable will have a serial number associated with it.
+
+  %h2 Inventory to User
+  %hr
+  %p Inventory is handed to a user through a Checkout. At Checkout you can make specific notes about an asset.
+  %p Note, a user can also be a location like the 'game room'
