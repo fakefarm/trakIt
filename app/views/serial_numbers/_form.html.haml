@@ -10,14 +10,8 @@
       = f.label :number
       = f.text_field :number
     .field
-      = f.label :user
-      = f.collection_select :user_id, User.all, :id, :name
-    .field
       = f.label :warranty_end
       = f.date_select :warranty_end
-    .field
-      = f.label :asset
-      = f.collection_select :asset_id, Asset.all, :id, :name
     .actions
       = f.submit 'Save', class: "btn btn-success"
 
