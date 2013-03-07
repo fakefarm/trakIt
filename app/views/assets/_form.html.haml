@@ -6,11 +6,12 @@
       %ul
         - @asset.errors.full_messages.each do |msg|
           %li= msg
-          
+
   .control-group
     .field
       = f.label :bundle_id
       = f.collection_select :bundle_id, Bundle.all, :id, :name
+      = link_to "Or, add a new bundle", new_bundle_path
     .field
       = f.label :name
       = f.text_field :name

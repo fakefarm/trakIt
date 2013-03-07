@@ -3,7 +3,7 @@ class SerialNumbersController < ApplicationController
     @serial_numbers = SerialNumber.all
 
     respond_to do |format|
-      format.html 
+      format.html
       format.json { render json: @serial_numbers }
     end
   end
@@ -13,7 +13,7 @@ class SerialNumbersController < ApplicationController
     @serial_number = SerialNumber.find(params[:id])
 
     respond_to do |format|
-      format.html 
+      format.html
       format.json { render json: @serial_number }
     end
   end
@@ -22,7 +22,7 @@ class SerialNumbersController < ApplicationController
     @serial_number = SerialNumber.new
 
     respond_to do |format|
-      format.html 
+      format.html
       format.json { render json: @serial_number }
     end
   end
@@ -33,7 +33,6 @@ class SerialNumbersController < ApplicationController
 
   def create
     @serial_number = SerialNumber.new(params[:serial_number])
-    @default_to_none = User.find(2)
     respond_to do |format|
       if @serial_number.save
         format.html { redirect_to asset_path(@serial_number.asset_id), notice: 'Serial number was successfully created.' }

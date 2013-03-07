@@ -9,15 +9,17 @@
   .field
     = f.label :user_id
     = f.collection_select :user_id, User.all, :id, :name
+    = link_to "Or, add a new user", new_user_path
   .field
     = f.label :asset_id
     = f.collection_select :asset_id, Asset.all, :id, :name
+    = link_to "Or, add a new asset", new_asset_path
   .field
     = f.label :quantity
     = f.number_field :quantity
   .field
     = f.label :status
-    = f.text_field :status  
+    = f.text_field :status
   .field
     = f.label :due_date
     = f.select :due_date, options_for_select(checkout_dates), :include_blank => true
