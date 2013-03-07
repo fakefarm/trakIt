@@ -1,4 +1,9 @@
-@import "bootstrap";
+@import "bourbon";
+@import "neat";
+@import "settings";
+@import "base";
+@import "module";
+@import "layout";
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
@@ -14,14 +19,3 @@
  *= require_tree .
  */
 
-a:hover{
-  text-decoration: none;
-};
-
-body{
-  background-image: url('greyfloral.png')
-}
-
-p#notice{
-  color: red;
-}
