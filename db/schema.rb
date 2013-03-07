@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130304230509) do
+ActiveRecord::Schema.define(:version => 20130304215459) do
 
   create_table "asset_histories", :force => true do |t|
     t.string   "comments"
