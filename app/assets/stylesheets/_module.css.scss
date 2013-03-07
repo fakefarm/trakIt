@@ -1,3 +1,4 @@
+
 .m-home-logo{
   width: 300px;
 }
@@ -5,3 +6,64 @@
 .m-header-logo{
   width: 200px;
 }
+
+.m-welcome-container{
+  background: white;
+  overflow: auto;
+  padding: 5%;
+}
+
+.m-app-container{
+  background: white;
+  padding: 5%;
+  overflow: auto;
+}
+
+.m-navbar{
+  ul{
+    margin: 5px 0;
+  }
+  li{
+    margin: 0 10px;
+  }
+  a{
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    &:hover{
+
+    }
+  }
+}
+
+.btn{
+   @include button(shiny, $green-light);
+   color: white;
+   font-size: 1.1em;
+   font-weight: 100;
+
+   &:visited{
+    color: white;
+  }
+}
+
+
+.btn-links{
+  @include button(shiny, gray);
+  color: white;
+  font-size: .8em;
+}
+
+.dave-bio{
+  float: left;
+  width: 150px;
+}
+
+.welcome-content{
+  margin: 5%;
+  background: $grey-light;
+  padding: 2%;
+}
+

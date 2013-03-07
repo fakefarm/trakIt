@@ -19,7 +19,7 @@
     = f.number_field :quantity
   .field
     = f.label :status
-    = f.text_field :status  
+    = f.text_field :status
   .field
     = f.label :Due_Date
     = f.datetime_select :due_date
@@ -28,9 +28,9 @@
   /   = f.select :due_date, options_for_select(checkout_dates), :include_blank => true
 
   .actions
-    = f.submit 'Save'
+    = f.submit 'Save', class: "btn"
 
 
 = link_to 'Show', @checkout
 \|
-= link_to 'Back', checkouts_path
+= link_to 'Back', checkouts_path, class: "btn back-btn"

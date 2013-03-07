@@ -2,22 +2,22 @@
 
 %table.table
   %tr
-    %th Number
-    %th Warranty end
     %th Asset
+    %th Warranty end
+    %th Number
     %th User
     %th
 
 
   - @serial_numbers.each do |serial_number|
     %tr
-      %td= link_to serial_number.number, serial_number_path(serial_number)
-      %td= serial_number.warranty_end
       %td= serial_number.asset.name
+      %td= serial_number.warranty_end
+      %td= link_to serial_number.number, serial_number_path(serial_number)
       %td= assigned_user_to_serial_number(serial_number)
       %td= link_to 'Destroy', serial_number, method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
 
-= link_to 'New Serial number', new_serial_number_path
+= link_to 'New Serial number', new_serial_number_path, class: "btn"
 

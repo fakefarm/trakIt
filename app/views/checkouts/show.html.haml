@@ -22,12 +22,12 @@
 
 = link_to 'Edit', edit_checkout_path(@checkout)
 \|
-= link_to 'Back', checkouts_path
+= link_to 'Back', checkouts_path, class: "btn back-btn"
 
 = render 'assignment_histories/form'
 
 - @checkout.assignment_histories.each do |historical|
   %p
-  = historical.note 
-  \- 
+  = historical.note
+  \-
   = historical.created_at.strftime("%B %e")

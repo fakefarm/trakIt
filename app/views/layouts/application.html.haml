@@ -9,4 +9,7 @@
 
   %body
     = render 'shared/main_nav'
-    = yield
+    .m-app-container
+      = yield
+
+  = render "shared/footer"

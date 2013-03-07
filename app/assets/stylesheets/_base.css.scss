@@ -1,16 +1,9 @@
 body {
+  @include outer-container;
   background-image: url('fabric.png');
   background-color: #fff;
   color: #333;
-  font-family: verdana, arial, helvetica, sans-serif;
   font-size: 100%;
-  line-height: 18px;
-}
-
-p, ol, ul, td {
-  font-family: $sans;
-  font-size: 1.2em;
-  line-height: 1.2em;
 }
 
 h1, h2, h3{
@@ -23,15 +16,29 @@ pre {
   font-size: 1.1em;
 }
 
+p, ol, ul, td, label, button, a {
+  font-family: $sans;
+  font-size: 1.1em;
+  line-height: 1.2em;
+}
+
+ul{
+}
+
+li{
+  display: inline-block;
+}
+
+
 a {
-  color: #000;
+  color: $green-dark;
+  text-decoration: none;
   &:visited {
-    color: #666;
+    color: $grey-dark;
+    font-weight: 100;
   }
   &:hover {
-    color: #fff;
-    background-color: $black;
-    text-decoration: none;
+    color: $green-light;
   }
 }
 
@@ -74,3 +81,20 @@ div {
   }
 }
 
+table{
+  @include span-columns(12);
+  @include row(table);
+  margin-bottom: 5px;
+  border-bottom: 2px solid $black;
+}
+
+td{
+  @include span-columns(4);
+  @include reset-display;
+  @include pad();
+}
+
+footer{
+  float: right;
+  margin-right: 5%;
+}

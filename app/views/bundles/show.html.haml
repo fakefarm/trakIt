@@ -4,14 +4,14 @@
 
 = link_to 'Edit', edit_bundle_path(@bundle)
 \|
-= link_to 'Back', bundles_path
+= link_to 'Back', bundles_path, class: "btn back-btn"
 
 <hr>
 
 - @bundle.bundle_attributes.each do |attr|
   %p
   = attr.bundle_key
-  \: 
+  \:
   = attr.bundle_value
 
 = render 'form_attributes'
@@ -21,9 +21,8 @@
   %tr
     %th Asset
     %th Quantity
-    
+
   - @bundle.assets.each do |asset|
     %tr
       %td= link_to asset.name, asset
       %td= asset.quantity
-        

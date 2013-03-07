@@ -1,25 +1,23 @@
 .container
   = image_tag "logo2.png", class: "m-home-logo"
 
-  %h1 Let's track your stuff!
-  %p Manage inventory and the people using the inventory.
+  %p Manage your precious inventory!
 
-  %h2 3 ways to view your inventory
-  %p Depending on the amount of inventory you need to manage at one time, you can view it at three different levels...
+  %h1 About Dave Woodall
 
-  %h3 Birdseye: Bundles
-
-  %p Think of Bundles as very categories. Examples TV, Hard Drive, Laptop. This way you can view all of inventory based on the group.
-
-  %h3 Group: Assets
-  %p groups are a collection of bundled inventory. For example 27" monitors.
-  You can add multiple assets at once.
-
-  %h3 Specific Item: Serial Numbers
-
-  %p Each item that is trackable will have a serial number associated with it.
-
-  %h2 Checkout inventory
+  = image_tag "dave_bio.jpg", class: 'dave-bio'
+  %p Hey there!
   %p
-  Inventory is assigned to users through Checkouts.
+    I've been building Trakit for the past 2 months. It's a Ruby on Rails app that is tested with
+    %br
+    cucumber and RSpec.
+
+  .btn-links= link_to "hireDave.me", "http://www.hiredave.me"
+
+  .welcome-content
+    %h1 About
+    %p Need to manage people and inventory items they use?
+    %p Trakit helps manage inventory catagories and specific items.
+
+    %h1.btn= link_to "Let's track your stuff!", new_asset_path
 
