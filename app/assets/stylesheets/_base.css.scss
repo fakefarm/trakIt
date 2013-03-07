@@ -1,25 +1,26 @@
-body{
-  background-image: url('fabric.png')
-}
-
 body {
+  background-image: url('fabric.png');
   background-color: #fff;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
+  font-size: 100%;
   line-height: 18px;
 }
 
 p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
+  font-family: $sans;
+  font-size: 1.2em;
+  line-height: 1.2em;
+}
+
+h1, h2, h3{
+  font-family: $serif;
 }
 
 pre {
   background-color: #eee;
   padding: 10px;
-  font-size: 11px;
+  font-size: 1.1em;
 }
 
 a {
@@ -61,14 +62,14 @@ div {
     text-align: left;
     font-weight: bold;
     padding: 5px 5px 5px 15px;
-    font-size: 12px;
+    font-size: 1.2em;
     margin: -7px;
     margin-bottom: 0px;
     background-color: #c00;
     color: #fff;
   }
   ul li {
-    font-size: 12px;
+    font-size: 1.2em;
     list-style: square;
   }
 }
