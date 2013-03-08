@@ -37,8 +37,10 @@
 
 .m-app-container{
   background: white;
+  border-radius: 4px;
   padding: 5%;
   overflow: auto;
+  box-shadow: 1px 1px 2px $grey-dark;
 }
 
 .m-navbar{
@@ -55,7 +57,7 @@
     color: white;
     text-decoration: none;
     &:hover{
-
+      color: $green-light;
     }
   }
 }

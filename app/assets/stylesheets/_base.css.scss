@@ -6,7 +6,7 @@ body {
   font-size: 100%;
 }
 
-h1, h2, h3{
+h1, h2, h3, th{
   font-family: $serif;
 }
 
@@ -35,11 +35,12 @@ a {
   color: $green-dark;
   text-decoration: none;
   &:visited {
-    color: $grey-dark;
+    color: $green-dark;
     font-weight: 100;
   }
   &:hover {
     color: $green-light;
+    @include transition (all 200ms ease-in-out);
   }
 }
 
@@ -86,16 +87,20 @@ table{
   @include span-columns(12);
   @include row(table);
   margin-bottom: 5px;
-  border-bottom: 2px solid $black;
+  border-bottom: 2px solid $grey-light;
+  border-top: 2px solid $grey-light;
 }
 
+tr{
+  text-align: left;
+}
+
+
 td{
-  @include span-columns(4);
+  text-align: left;
   @include reset-display;
-  @include pad();
 }
 
 footer{
   float: right;
-  margin-right: 5%;
 }
