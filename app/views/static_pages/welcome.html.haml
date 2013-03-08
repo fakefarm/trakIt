@@ -1,23 +1,22 @@
-.container
-  = image_tag "logo2.png", class: "m-home-logo"
+.m-about
 
-  %p Manage your precious inventory!
+  .m-about-trakit
+    %h1 About Trakit
+    %p Still tracking your inventory on a spreadsheet? Trakit keeps tabs on who, where, and when you loan out inventory items, big and small.
+    %h2 Features
+    %ul
+      %li Manage bulk items or very specific serial numbers
+      %li View an employee's list of checked out items
+      %li See where all the items are checked out.
+    .btn= link_to "See Trakit in action!", new_asset_path
 
-  %h1 About Dave Woodall
+  .m-about-dave
+    %h1 Hire Dave Woodall
+    = image_tag "dave_bio.jpg", class: 'dave-bio'
+    %p Hey there! I've started building Trakit about two months ago to manage #{link_to "FactoryLabs's", "www.factorycodelabs.com"} internal inventory. (Although we didn't call it "Trakit", this is just my public version). This app is to showcase  my skills in regards to Ruby, Rails, RSpec, Cucumber, HAML, and SCSS. Take a look at the #{link_to "source code", "http://www.github.com/woodall/trakit"}, or the #{link_to "user stories", "https://trello.com/board/trakit/513664f6bb46d3fd770053d4"}
+    %p I'm looking to join a Rails team to learn, grow, and help build awesome things!
+    = image_tag 'signature.jpg', class: 'm-signature'
 
-  = image_tag "dave_bio.jpg", class: 'dave-bio'
-  %p Hey there!
-  %p
-    I've been building Trakit for the past 2 months. It's a Ruby on Rails app that is tested with
-    %br
-    cucumber and RSpec.
-
-  .btn-links= link_to "hireDave.me", "http://www.hiredave.me"
-
-  .welcome-content
-    %h1 About
-    %p Need to manage people and inventory items they use?
-    %p Trakit helps manage inventory catagories and specific items.
-
-    %h1.btn= link_to "Let's track your stuff!", new_asset_path
+    .btn-links= link_to "hireDave.me", "http://www.hiredave.me"
+    = mail_to "dave@hireDave.me", "or, email me"
 

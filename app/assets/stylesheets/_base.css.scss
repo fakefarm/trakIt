@@ -19,7 +19,7 @@ pre {
 p, ol, ul, td, label, button, a {
   font-family: $sans;
   font-size: 1.1em;
-  line-height: 1.2em;
+  line-height: 1.8em;
 }
 
 ul{
@@ -27,6 +27,7 @@ ul{
 
 li{
   display: inline-block;
+  line-height: 2.5em;
 }
 
 

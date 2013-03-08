@@ -1,3 +1,6 @@
+.m-hero-image{
+  @include span-columns(12);
+}
 
 .m-home-logo{
   width: 300px;
@@ -10,7 +13,26 @@
 .m-welcome-container{
   background: white;
   overflow: auto;
-  padding: 5%;
+  padding: 2%;
+  box-shadow: 0px 1px 3px $grey-dark;
+}
+
+.m-about{
+  @include span-columns(12);
+}
+
+.m-about-dave{
+  @include span-columns(6);
+}
+
+.m-about-trakit{
+  @include span-columns(6);
+}
+
+.m-signature{
+  width: 150px;
+  padding: 1% 0 4%;
+  display: block;
 }
 
 .m-app-container{
