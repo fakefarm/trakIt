@@ -4,10 +4,10 @@ gem 'rails', '3.2.11'
 gem "haml", "~> 3.1.7"
 gem 'bootstrap-sass', '2.1'
 gem 'neat'
-#gem 'RedCloth'
 gem 'pry'
 gem 'annotate', ">=2.5.0"
 gem 'simple_form'
+gem 'newrelic_rpm'
 
 group :development, :test do
   gem 'haml-rails'
