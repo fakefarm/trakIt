@@ -8,6 +8,10 @@
 
 .m-header-logo{
   width: 200px;
+  &:hover{
+    @include transform(rotate(-9deg));
+    @include transition (all 50ms ease-in-out);
+  }
 }
 
 .m-welcome-container{
@@ -23,6 +27,13 @@
 
 .m-about-dave{
   @include span-columns(6);
+  img.dave-bio{
+    margin: 0 3px 0 0;
+    &:hover{
+      @include transform(rotate(4deg));
+      @include transition (all 50ms ease-in-out);
+  }
+  }
 }
 
 .m-about-trakit{
