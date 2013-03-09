@@ -2,14 +2,13 @@
   = link_to (image_tag "logo2.png", class: "m-header-logo"), root_path
   .m-navbar
     %ul
-      %li= link_to 'New Asset', new_asset_path
-      %li= link_to 'New checkout', new_checkout_path
-      %li= link_to 'New user', new_user_path
-      %li= link_to 'New bundle', new_bundle_path
-      %li
       %li= link_to 'Assets', assets_path
       %li= link_to 'Bundles', bundles_path
       %li= link_to 'Users', users_path
       %li= link_to 'Checkouts', checkouts_path
       %li= link_to 'Serial Numbers', serial_numbers_path
-
+      %li
+      %li= link_to 'New Asset', new_asset_path, class: 'm-new-thing'
+      %li= link_to 'New checkout', new_checkout_path, class: 'm-new-thing'
+      %li= link_to 'New user', new_user_path, class: 'm-new-thing'
+      %li= link_to 'New bundle', new_bundle_path, class: 'm-new-thing'
